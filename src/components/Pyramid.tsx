@@ -30,7 +30,7 @@ function Stone({ r, narrow }: { r: PondRow; narrow: boolean }) {
     <div className="stone">
       <button type="button" className="stone__btn" onClick={() => openCard(r.addr)} aria-label={`Rank ${r.rank}: ${who.name}, ${amount(r.balance)} $TOMB. Open this block.`}>
         <span className="stone__rank tabular">{r.rank}</span>
-        <CrewFace addr={r.addr} pp={r.pp} x={r.x} size={narrow ? 34 : 68} className="stone__face" />
+        <CrewFace addr={r.addr} pp={r.pp} x={r.x} size={narrow ? 34 : 84} className="stone__face" />
         <span className="stone__name">
           {who.name}
           {r.x ? <XCheck x={r.x} /> : who.claimed ? <SealCheck className="stone__seal" weight="fill" aria-hidden="true" /> : null}

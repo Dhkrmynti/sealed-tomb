@@ -151,8 +151,9 @@ const WIDE = build({ W: 1600, H: 800, apexY: 64, capY: 136, baseY: 724, horizonY
   { x: 190, apex: 560, half: 150 },
   { x: 40, apex: 606, half: 80 },
 ] });
-// On a phone the stage stands upright: open sky for the headline, the pyramid below it.
-const TALL = build({ W: 1000, H: 1900, apexY: 820, capY: 900, baseY: 1790, horizonY: 1700, half: 690, n: 32, ramp: false, far: [] });
+// On a phone the stage stands upright: open sky for the headline, the pyramid below it,
+// and the doorway steps out under the stage onto the sand so it never hides the stone.
+const TALL = build({ W: 1000, H: 1160, apexY: 670, capY: 730, baseY: 1110, horizonY: 1050, half: 345, n: 22, ramp: false, far: [] });
 
 /**
  * One hauler facing up the ramp (to the left), in silhouette: bare torso leaning into the
@@ -249,6 +250,41 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
     { scope: root, dependencies: [narrow, climb] },
   );
 
+  const counts = (
+    <dl className="hero__count is-west">
+      <div>
+        <dt>Sealed</dt>
+        <dd className="tabular">{live ? amount(status!.counts.sitters) : "0"}</dd>
+      </div>
+      <div>
+        <dt>Rites run</dt>
+        <dd className="tabular">{live ? status!.rounds : 0}</dd>
+      </div>
+      <div className="is-cursed">
+        <dt>Cursed</dt>
+        <dd className="tabular">{live ? status!.counts.hopped : 0}</dd>
+      </div>
+    </dl>
+  );
+
+  const door = (
+    <div className="hero__door">
+      {narrow ? counts : null}
+      <div className="hero__deal">
+        <BuyButton status={status} />
+        <CaCoupon status={status} compact={narrow} />
+      </div>
+      {narrow && !offline ? (
+        <div className="hero__ramp-row">
+          <Ramp value={escrow} target={target} label={`Offering ${escrow} of ${target} ETH toward ${STEP[next.kind].name}`} />
+          <p className="tabular">
+            Next: {STEP[next.kind].name} · {live ? `${escrow.toFixed(4)} / ${next.thresholdETH} ETH` : `at ${next.thresholdETH} ETH`}
+          </p>
+        </div>
+      ) : null}
+    </div>
+  );
+
   return (
     <section className="hero" id="top" ref={root} aria-label="The Sealed Tomb">
       <div className="hero__stage" style={{ aspectRatio: `${geo.W} / ${geo.H}` }}>
@@ -268,7 +304,7 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
 
           {/* sky, low sun from the west, the far pyramids in the haze, the dunes */}
           <rect className="hero__air" x={-geo.W} y={-geo.H} width={geo.W * 3} height={geo.H + geo.horizonY + 30} fill="url(#hero-sky)" />
-          <circle className="hero__sun" cx={narrow ? cx - 300 : cx - geo.half * 0.68} cy={narrow ? geo.apexY - 120 : geo.apexY + 70} r={narrow ? 46 : 54} />
+          <circle className="hero__sun" cx={narrow ? cx - 300 : cx - geo.half * 0.68} cy={narrow ? geo.apexY + 60 : geo.apexY + 70} r={narrow ? 46 : 54} />
           {geo.far.map((f) => (
             <g key={f.x} className="far">
               <path className="far-w" d={`M${f.x} ${f.apex} L${f.x - f.half} ${geo.horizonY + 6} L${f.x} ${geo.horizonY + 6} Z`} />
@@ -352,7 +388,7 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
         </svg>
 
         <a className="hero__tag" href="#vault" style={{ left: pct(cx + capHalf + 18, geo.W), top: pct(geo.apexY + (geo.capY - geo.apexY) * 0.42, geo.H) }}>
-          The capstone: the 10 biggest blocks
+          {narrow ? "Capstone: top 10" : "The capstone: the 10 biggest blocks"}
         </a>
 
         {geo.ramp && !offline ? (
@@ -369,36 +405,11 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
           <p className="hero__lede">{deck}</p>
         </div>
 
-        <div className="hero__door">
-          <div className="hero__deal">
-            <BuyButton status={status} />
-            <CaCoupon status={status} compact={narrow} />
-          </div>
-          {narrow && !offline ? (
-            <div className="hero__ramp-row">
-              <Ramp value={escrow} target={target} label={`Offering ${escrow} of ${target} ETH toward ${STEP[next.kind].name}`} />
-              <p className="tabular">
-                Next: {STEP[next.kind].name} · {live ? `${escrow.toFixed(4)} / ${next.thresholdETH} ETH` : `at ${next.thresholdETH} ETH`}
-              </p>
-            </div>
-          ) : null}
-        </div>
+        {narrow ? null : door}
 
-        <dl className="hero__count is-west">
-          <div>
-            <dt>Sealed</dt>
-            <dd className="tabular">{live ? amount(status!.counts.sitters) : "0"}</dd>
-          </div>
-          <div>
-            <dt>Rites run</dt>
-            <dd className="tabular">{live ? status!.rounds : 0}</dd>
-          </div>
-          <div className="is-cursed">
-            <dt>Cursed</dt>
-            <dd className="tabular">{live ? status!.counts.hopped : 0}</dd>
-          </div>
-        </dl>
+        {narrow ? null : counts}
       </div>
+      {narrow ? door : null}
       {geo.ramp ? (
         <Ramp className="sr-only" value={escrow} target={target} label={`Offering ${escrow} of ${target} ETH toward ${STEP[next.kind].name}`} />
       ) : null}

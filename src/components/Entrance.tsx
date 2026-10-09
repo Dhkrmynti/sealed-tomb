@@ -25,7 +25,7 @@ export function Entrance() {
           scrollTrigger: { trigger: root.current, start: "top top", end: "+=140%", pin: true, scrub: 0.6, anticipatePin: 1 },
           defaults: { ease: "none" },
         });
-        tl.to(".entry__wall", { scale: 9, transformOrigin: "50% 76%", ease: "power2.in", duration: 1 })
+        tl.to(".entry__wall", { scale: 9, transformOrigin: "50% 72%", ease: "power2.in", duration: 1 })
           .to(".entry__sky", { opacity: 0, duration: 0.5 }, 0)
           .to(".entry__say", { opacity: 0, y: -40, duration: 0.25 }, 0)
           .fromTo(".entry__inside", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.7)
@@ -34,7 +34,7 @@ export function Entrance() {
       mm.add("(max-width: 760px)", () => {
         gsap
           .timeline({ scrollTrigger: { trigger: root.current, start: "top 60%", end: "bottom 40%", scrub: 0.5 }, defaults: { ease: "none" } })
-          .to(".entry__wall", { scale: 3.2, transformOrigin: "50% 76%" })
+          .to(".entry__wall", { scale: 3.2, transformOrigin: "50% 72%" })
           .fromTo(".entry__inside", { opacity: 0 }, { opacity: 1 }, 0.4);
       });
     },

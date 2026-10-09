@@ -56,7 +56,10 @@ export function App() {
     <>
       {DEMO ? (
         <div className="demo-strip" role="note">
-          Illustration edition: every number on this page is made up to preview the tomb. Try your block and the mask workshop; nothing you set is saved.
+          <span className="demo-strip__long">
+            Illustration edition: every number on this page is made up to preview the tomb. Try your block and the mask workshop; nothing you set is saved.
+          </span>
+          <span className="demo-strip__short">Preview: every number here is made up. Nothing you set is saved.</span>
         </div>
       ) : null}
       <Header status={status} />
