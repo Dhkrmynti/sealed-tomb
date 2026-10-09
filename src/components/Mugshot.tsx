@@ -1,32 +1,35 @@
 /**
- * A crew mugshot: a raccoon head in Robin's line style, assembled from four parts.
- * Every wallet gets one generated from its address; holders can pick their own parts
- * in the mugshot booth. Part counts must match MUGSHOT_PARTS in bot/byline.ts.
+ * A royal mask: the face every block wears on the pyramid, assembled from four parts.
+ * Every wallet gets one generated from its address; holders can pick their own parts in
+ * the mask workshop. Part counts must match MUGSHOT_PARTS in bot/byline.ts ([5, 5, 6, 6]),
+ * so the saved [material, crown, regalia, backdrop] arrays keep validating on the engine.
  */
-import type { CSSProperties } from "react";
+import { useId, type CSSProperties } from "react";
 
 export const PARTS = { fur: 5, hat: 5, acc: 6, bg: 6 } as const;
-export type Traits = [fur: number, hat: number, acc: number, bg: number];
+export type Traits = [material: number, crown: number, regalia: number, backdrop: number];
 
 export const PART_NAMES = {
-  fur: ["Gray", "Charcoal", "Silver", "Brown", "Ginger"],
-  hat: ["No hat", "Bowler", "Fedora", "Flat cap", "Top hat"],
-  acc: ["Nothing", "Monocle", "Shades", "Cigar", "Gold chain", "Scar"],
-  bg: ["Newsprint", "Ash", "Paper", "Red", "Navy", "Brass"],
+  fur: ["Gold", "Lapis", "Limestone", "Obsidian", "Bronze"],
+  hat: ["Bare head", "Nemes", "Blue crown", "White crown", "Double crown"],
+  acc: ["Nothing", "False beard", "Kohl", "Uraeus", "Ankh", "Broad collar"],
+  bg: ["Limestone", "Sandstone", "Ochre", "Night", "Lapis", "Electrum"],
 };
 
-const FUR: [string, string, string][] = [
-  ["#8d95a3", "#5f6775", "#dfe2e7"],
-  ["#5c626d", "#3b4049", "#c9ccd2"],
-  ["#b7bcc5", "#868c97", "#eef0f3"],
-  ["#8a6a52", "#5e4636", "#e4d3c4"],
-  ["#c08552", "#8c5a31", "#f1dcc7"],
+/** [face, shade, line] per material. */
+const MATERIAL: [string, string, string][] = [
+  ["#d6a72e", "#a47a14", "#3d2b06"],
+  ["#3d5da8", "#27427f", "#0d1733"],
+  ["#ddd3bf", "#b3a78f", "#3a342b"],
+  ["#2e2c31", "#1b1a1d", "#c9c1b2"],
+  ["#a7693a", "#78471f", "#2b1608"],
 ];
-const BG = ["#dedcd5", "#bdb9ae", "#e9e7e1", "#c8241b", "#2f3d55", "#d4a845"];
-const INK = "#141a26";
-const MASK = "#1d2330";
-const BRASS = "#d4a845";
-const HAT = "#1b2232";
+const BACKDROP = ["#cbc1ad", "#cf9a5c", "#a3311b", "#15120f", "#27427f", "#d4a62c"];
+const GOLD = "#d4a62c";
+const LAPIS = "#2c4a8f";
+const RED = "#b23a22";
+const LINEN = "#eee9dc";
+const FRAME = "#1e1d1a";
 
 function fnv(s: string) {
   let h = 0x811c9dc5;
@@ -37,7 +40,7 @@ function fnv(s: string) {
   return h >>> 0;
 }
 
-/** The mugshot a wallet gets until its owner picks one. */
+/** The mask a wallet gets until its owner picks one. */
 export function traitsFor(addr: string): Traits {
   const h = fnv(addr.toLowerCase() + ":mugshot");
   return [h % PARTS.fur, Math.floor(h / 7) % PARTS.hat, Math.floor(h / 53) % PARTS.acc, Math.floor(h / 419) % PARTS.bg];
@@ -49,120 +52,142 @@ export function validTraits(t: unknown): t is Traits {
 }
 
 export function Mugshot({ traits, size = 40, className = "", title, style }: { traits: Traits; size?: number; className?: string; title?: string; style?: CSSProperties }) {
-  const [f, hat, acc, bg] = traits;
-  const [fur, furDark, furLight] = FUR[f] ?? FUR[0];
-  const dark = bg === 3 || bg === 4;
+  const [m, crown, reg, bg] = traits;
+  const [face, shade, line] = MATERIAL[m] ?? MATERIAL[0];
+  const id = useId().replace(/[^a-zA-Z0-9_-]/g, "");
+  const dark = bg === 2 || bg === 3 || bg === 4;
   return (
-    <svg className={`mugshot ${className}`} viewBox="0 0 100 100" width={size} height={size} role={title ? "img" : undefined} aria-label={title} aria-hidden={title ? undefined : true} style={style}>
-      <rect width="100" height="100" fill={BG[bg] ?? BG[0]} />
-      {/* the height chart behind every mugshot */}
-      <g stroke={dark ? "#ffffff" : INK} strokeOpacity="0.16" strokeWidth="1">
-        {[18, 34, 50, 66, 82].map((y) => (
-          <path key={y} d={`M0 ${y}h100`} />
-        ))}
-      </g>
+    <svg className={`mask ${className}`} viewBox="0 0 100 100" width={size} height={size} role={title ? "img" : undefined} aria-label={title} aria-hidden={title ? undefined : true} style={style}>
+      <defs>
+        <clipPath id={`nemes-${id}`}>
+          <path d="M50 15 C35 15 27 25 27 40 L21 80 L36 85 L36 60 L64 60 L64 85 L79 80 L73 40 C73 25 65 15 50 15 Z" />
+          <path d="M33 40 C33 27 41 21 50 21 C59 21 67 27 67 40 C61 36.4 39 36.4 33 40 Z" />
+        </clipPath>
+      </defs>
+      <rect width="100" height="100" fill={BACKDROP[bg] ?? BACKDROP[0]} />
+      {/* the sun disc behind every head, low and quiet */}
+      <circle cx="50" cy="44" r="34" fill={dark ? "#ffffff" : FRAME} opacity="0.07" />
 
-      {/* shoulders in a suit, collar and tie */}
-      <path d="M12 100 C 16 82 32 77 50 77 C 68 77 84 82 88 100 Z" fill="#2f3d55" stroke={INK} strokeWidth="2.5" />
-      <path d="M41 78 L 50 92 L 59 78 Z" fill="#f3ecdc" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
-      <path d="M50 84 L 46 80 L 46 88 Z M50 84 L 54 80 L 54 88 Z" fill="#c8402a" stroke={INK} strokeWidth="1.4" strokeLinejoin="round" />
-
-      {/* ears */}
-      <g stroke={INK} strokeWidth="2.5" strokeLinejoin="round">
-        <path d="M24 36 L 19 12 L 40 25 Z" fill={fur} />
-        <path d="M76 36 L 81 12 L 60 25 Z" fill={fur} />
-      </g>
-      <path d="M26 30 L 23 17 L 35 25 Z" fill={MASK} />
-      <path d="M74 30 L 77 17 L 65 25 Z" fill={MASK} />
-
-      {/* head with cheek tufts */}
-      <path d="M20 48 C 20 30 34 22 50 22 C 66 22 80 30 80 48 L 88 54 L 79 56 C 75 68 63 74 50 74 C 37 74 25 68 21 56 L 12 54 Z" fill={fur} stroke={INK} strokeWidth="2.5" strokeLinejoin="round" />
-      <path d="M50 24 C 47 31 47 37 50 42 C 53 37 53 31 50 24 Z" fill={furDark} />
-      {/* the bandit mask */}
-      <path d="M22 44 C 30 34 44 34 50 41 C 56 34 70 34 78 44 C 76 54 66 57 58 53 C 54 51 46 51 42 53 C 34 57 24 54 22 44 Z" fill={MASK} />
-      <path d="M38 61 C 40 54 60 54 62 61 C 62 68 56 72 50 72 C 44 72 38 68 38 61 Z" fill={furLight} stroke={INK} strokeWidth="2" />
-      <ellipse cx="50" cy="57" rx="4" ry="3" fill={INK} />
-      <path d="M44 65 Q 50 68.5 56 64" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" />
-      <g fill="#ffffff" stroke={INK} strokeWidth="1.6">
-        <circle cx="39" cy="45" r="5.8" />
-        <circle cx="61" cy="45" r="5.8" />
-      </g>
-      <g fill={INK}>
-        <circle cx="39.8" cy="45.6" r="3" />
-        <circle cx="60.2" cy="45.6" r="3" />
-      </g>
-      <g fill="#ffffff">
-        <circle cx="41" cy="44" r="1" />
-        <circle cx="61.4" cy="44" r="1" />
-      </g>
-
-      {/* accessories */}
-      {acc === 1 ? (
-        <g fill="none" stroke={BRASS}>
-          <circle cx="61" cy="45" r="8.5" strokeWidth="2.6" />
-          <path d="M68 50 C 74 58 73 66 69 72" strokeWidth="1.2" strokeDasharray="2 1.6" />
+      {/* nemes headcloth falls behind the face and onto the shoulders */}
+      {crown === 1 ? (
+        <g clipPath={`url(#nemes-${id})`}>
+          <rect x="0" y="0" width="100" height="100" fill={GOLD} />
+          {Array.from({ length: 13 }, (_, i) => (
+            <rect key={i} x="0" y={14 + i * 5.4} width="100" height="2.7" fill={LAPIS} />
+          ))}
         </g>
       ) : null}
-      {acc === 2 ? (
-        <g fill={INK} stroke={INK} strokeWidth="1.5" strokeLinejoin="round">
-          <path d="M29 40 H 47 L 46 49 Q 38 53 31 49 Z" />
-          <path d="M53 40 H 71 L 69 49 Q 62 53 54 49 Z" />
-          <path d="M47 42 H 53" fill="none" strokeWidth="2" />
-          <path d="M33 42 L 38 41" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="1.4" fill="none" />
+
+      {/* shoulders */}
+      <path d="M12 100 C16 84 32 79 50 79 C68 79 84 84 88 100 Z" fill={shade} stroke={line} strokeWidth="1.6" />
+      <path d="M43 70 L43 81 C46 83 54 83 57 81 L57 70 Z" fill={shade} />
+
+      {/* broad collar of lapis, gold and carnelian beads */}
+      {reg === 5 ? (
+        <g fill="none" strokeLinecap="round">
+          <path d="M25 93 Q50 70 75 93" stroke={GOLD} strokeWidth="4" />
+          <path d="M22 99 Q50 74 78 99" stroke={LAPIS} strokeWidth="4" />
+          <path d="M20 106 Q50 79 80 106" stroke={RED} strokeWidth="4" />
+          <path d="M27.5 88 Q50 68.5 72.5 88" stroke={LAPIS} strokeWidth="1.6" strokeDasharray="1.6 1.4" />
         </g>
       ) : null}
-      {acc === 3 ? (
+
+      {/* ears show unless the nemes covers them */}
+      {crown !== 1 ? (
+        <g fill={face} stroke={line} strokeWidth="1.4">
+          <path d="M33.5 46 C29 44 28 51 30 55 C31 57.5 33 58 34.5 57" />
+          <path d="M66.5 46 C71 44 72 51 70 55 C69 57.5 67 58 65.5 57" />
+        </g>
+      ) : null}
+
+      {/* the face */}
+      <path d="M33 43 C33 29 40 23 50 23 C60 23 67 29 67 43 L67 51 C67 64 60 74 50 74 C40 74 33 64 33 51 Z" fill={face} stroke={line} strokeWidth="1.6" />
+      <path d="M50 26 C46 30 45 36 46 41 L54 41 C55 36 54 30 50 26 Z" fill={shade} opacity="0.35" />
+      <g fill="none" stroke={line} strokeLinecap="round">
+        <path d="M37 42.5 Q42.5 38.8 48 41.6" strokeWidth="2" />
+        <path d="M52 41.6 Q57.5 38.8 63 42.5" strokeWidth="2" />
+      </g>
+      <g fill={LINEN} stroke={line} strokeWidth="1.3" strokeLinejoin="round">
+        <path d="M37 47 Q42.5 43.4 48 47 Q42.5 50.2 37 47 Z" />
+        <path d="M52 47 Q57.5 43.4 63 47 Q57.5 50.2 52 47 Z" />
+      </g>
+      <g fill={line === "#c9c1b2" ? "#1b1a1d" : line}>
+        <circle cx="42.5" cy="47" r="2" />
+        <circle cx="57.5" cy="47" r="2" />
+      </g>
+      <g fill="none" stroke={line} strokeWidth="1.3" strokeLinecap="round">
+        <path d="M37 47 L33.5 46" />
+        <path d="M63 47 L66.5 46" />
+        <path d="M50 49 L48.4 58.2 Q50 59.6 51.6 58.2" />
+      </g>
+      <path d="M44.5 64.2 Q50 61.6 55.5 64.2 Q50 67.4 44.5 64.2 Z" fill={shade} stroke={line} strokeWidth="1.2" strokeLinejoin="round" />
+
+      {/* kohl: the long painted wing and the falcon mark under the eye */}
+      {reg === 2 ? (
+        <g fill="none" stroke={line === "#c9c1b2" ? "#0d0d0e" : "#141210"} strokeLinecap="round">
+          <path d="M36.5 46.6 Q42.5 42.6 48.5 46.6 L32 44.6" strokeWidth="2" />
+          <path d="M51.5 46.6 Q57.5 42.6 63.5 46.6 L68 44.6" strokeWidth="2" />
+          <path d="M40 49.6 L38.6 55.4 Q37.4 57.6 35.4 56.4" strokeWidth="1.5" />
+          <path d="M60 49.6 L61.4 55.4 Q62.6 57.6 64.6 56.4" strokeWidth="1.5" />
+        </g>
+      ) : null}
+
+      {/* the false beard of a king */}
+      {reg === 1 ? (
         <g>
-          <path d="M55 66 L 74 62 L 75 66 L 56 70 Z" fill="#7a4a2a" stroke={INK} strokeWidth="1.4" strokeLinejoin="round" />
-          <path d="M72 62.4 L 75 61.8 L 76 65.8 L 73 66.4 Z" fill="#c8241b" />
-          <path d="M77 58 C 80 54 76 51 79 47" fill="none" stroke={INK} strokeOpacity="0.35" strokeWidth="1.4" strokeLinecap="round" />
+          <path d="M46.6 72 L53.4 72 L52.8 88 Q50 90.5 47.2 88 Z" fill={LAPIS} stroke={line} strokeWidth="1.2" strokeLinejoin="round" />
+          {[75.5, 79, 82.5, 86].map((y) => (
+            <path key={y} d={`M47 ${y} H53`} stroke={GOLD} strokeWidth="1.2" />
+          ))}
         </g>
       ) : null}
-      {acc === 4 ? (
+
+      {/* crowns, set over the brow */}
+      {crown === 1 ? <path d="M33 40 C39 36.4 61 36.4 67 40" fill="none" stroke={line} strokeWidth="1.4" /> : null}
+      {crown === 2 ? (
         <g>
-          <path d="M33 84 Q 50 98 67 84" fill="none" stroke={BRASS} strokeWidth="2.6" strokeDasharray="3 1.4" />
-          <circle cx="50" cy="93" r="4.6" fill={BRASS} stroke={INK} strokeWidth="1.4" />
-          <path d="M50 90.2 V 95.8 M 48.2 91.6 Q 50 90.4 51.6 91.8 Q 50 93 48.6 94.2 Q 50 95.6 51.8 94.4" fill="none" stroke={INK} strokeWidth="0.9" />
+          <path d="M30 42 C28 26 36 11.5 50 10 C64 11.5 72 26 70 42 C64 37.6 36 37.6 30 42 Z" fill={LAPIS} stroke={FRAME} strokeWidth="1.6" strokeLinejoin="round" />
+          <g fill={GOLD}>
+            {[[40, 20], [50, 17], [60, 20], [36, 29], [46, 26], [55, 26], [64, 29], [42, 34], [58, 34]].map(([x, y]) => (
+              <circle key={`${x}-${y}`} cx={x} cy={y} r="1.3" />
+            ))}
+          </g>
+          <path d="M31 40.5 C38 36.6 62 36.6 69 40.5" fill="none" stroke={GOLD} strokeWidth="2.4" />
         </g>
       ) : null}
-      {acc === 5 ? (
-        <g stroke="#7e1d16" strokeLinecap="round" fill="none">
-          <path d="M31 33 L 45 54" strokeWidth="2.2" />
-          <path d="M34 39 L 38 37 M 37 44 L 41 42 M 40 49 L 44 47" strokeWidth="1.2" />
+      {crown === 3 ? (
+        <g stroke={FRAME} strokeWidth="1.6" strokeLinejoin="round">
+          <path d="M34.5 41 C33 31 38 23 42 15 C44 8 46.5 4.5 50 4 C53.5 4.5 56 8 58 15 C62 23 67 31 65.5 41 C58 37.4 42 37.4 34.5 41 Z" fill={LINEN} />
+          <circle cx="50" cy="4.6" r="3" fill={LINEN} />
+          <path d="M35 39 C42 35.8 58 35.8 65 39" fill="none" strokeWidth="1.1" opacity="0.5" />
         </g>
       ) : null}
-
-      {/* hats */}
-      {hat === 1 ? (
-        <g stroke={INK} strokeWidth="2.2" strokeLinejoin="round">
-          <path d="M33 27 C 33 11 67 11 67 27 Z" fill={HAT} />
-          <ellipse cx="50" cy="27.5" rx="26" ry="4.6" fill={HAT} />
-          <path d="M33.4 23 H 66.6 V 26.4 H 33.4 Z" fill={BRASS} stroke="none" />
-        </g>
-      ) : null}
-      {hat === 2 ? (
-        <g stroke={INK} strokeWidth="2.2" strokeLinejoin="round">
-          <ellipse cx="50" cy="27.5" rx="31" ry="5.2" fill="#3a3330" />
-          <path d="M34 27 L 37 12 Q 50 5 63 12 L 66 27 Z" fill="#3a3330" />
-          <path d="M44 9.5 Q 50 14 56 9.5" fill="none" />
-          <path d="M34.8 22 H 65.2 L 65.8 25.6 H 34.2 Z" fill="#c8241b" stroke="none" />
-        </g>
-      ) : null}
-      {hat === 3 ? (
-        <g stroke={INK} strokeWidth="2.2" strokeLinejoin="round">
-          <path d="M24 31 C 25 15 58 10 74 22 L 84 27 C 72 33 40 34 24 31 Z" fill="#6b6a5f" />
-          <path d="M30 26 C 40 22 58 21 70 23" fill="none" strokeWidth="1.2" />
-        </g>
-      ) : null}
-      {hat === 4 ? (
-        <g stroke={INK} strokeWidth="2.2" strokeLinejoin="round">
-          <path d="M37 27 V 3 H 63 V 27 Z" fill={HAT} />
-          <ellipse cx="50" cy="27.5" rx="23" ry="4" fill={HAT} />
-          <path d="M37.4 20 H 62.6 V 24 H 37.4 Z" fill={BRASS} stroke="none" />
+      {crown === 4 ? (
+        <g stroke={FRAME} strokeWidth="1.6" strokeLinejoin="round">
+          <path d="M62 24 L62 5 L68.5 5 L68.5 24 Z" fill={RED} />
+          <path d="M40.5 25 C40 16 45 8.5 50 6 C55 8.5 60 16 59.5 25 Z" fill={LINEN} />
+          <path d="M30 42 L30 23 L70 23 L70 42 C62 37.6 38 37.6 30 42 Z" fill={RED} />
+          <path d="M57 26 C51 20.5 50.5 14 56 11.5" fill="none" stroke={GOLD} strokeWidth="1.8" strokeLinecap="round" />
         </g>
       ) : null}
 
-      <rect x="1" y="1" width="98" height="98" fill="none" stroke={INK} strokeWidth="2" />
+      {/* the cobra rearing on the brow */}
+      {reg === 3 ? (
+        <g stroke={FRAME} strokeWidth="1.1" strokeLinejoin="round">
+          <path d="M50 28.5 C47.2 28.5 46.6 31.6 47.6 34.4 L50 39.4 L52.4 34.4 C53.4 31.6 52.8 28.5 50 28.5 Z" fill={GOLD} />
+          <path d="M49 31.2 H51" stroke={RED} strokeWidth="1.4" />
+        </g>
+      ) : null}
+
+      {/* the ankh, held up beside the face */}
+      {reg === 4 ? (
+        <g fill="none" stroke={GOLD} strokeWidth="2.6" strokeLinecap="round">
+          <path d="M83 70 C79 70 78.6 76.4 83 78.6 C87.4 76.4 87 70 83 70 Z" />
+          <path d="M77.4 79.4 H88.6 M83 78.6 V95" />
+        </g>
+      ) : null}
+
+      <rect x="0.8" y="0.8" width="98.4" height="98.4" fill="none" stroke={FRAME} strokeWidth="1.6" />
     </svg>
   );
 }

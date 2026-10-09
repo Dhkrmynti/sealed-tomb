@@ -1,5 +1,5 @@
 /**
- * Pepads ($PADS) engine · Robinhood Chain (4663) · Pons Family v2
+ * The Sealed Tomb ($TOMB) engine · Robinhood Chain (4663) · Pons Family v2
  *
  * 1. Indexer: follows every $PADS Transfer, keeps balances and first-buy time, and marks a
  *    wallet "hopped off" forever once it sends $PADS to the curve / a DEX contract.
@@ -725,7 +725,7 @@ const server = http.createServer((req, res) => {
       const addr = lc(d.addr);
       const bad = spendNonce(addr, d.nonce, d.signature, (n) => xMessage(addr, "link", n));
       if (bad) return send(res, 400, { success: false, error: bad });
-      if (!(big(state.holders[addr]?.balance || "0") > 0n)) return send(res, 400, { success: false, error: "Only wallets holding $RBANK can link X." });
+      if (!(big(state.holders[addr]?.balance || "0") > 0n)) return send(res, 400, { success: false, error: "Only wallets holding $TOMB can link X." });
       try {
         return send(res, 200, { success: true, data: { url: startLink(addr) } });
       } catch (e: any) {

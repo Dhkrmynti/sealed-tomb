@@ -1,17 +1,19 @@
 /**
- * Every wallet gets a gang alias until its owner claims a byline. The alias is computed
- * from the address alone, so the same wallet always gets the same name, everywhere,
- * with nothing stored.
+ * Every wallet gets a royal alias until its owner carves a throne name. The alias is
+ * computed from the address alone, so the same wallet always gets the same name,
+ * everywhere, with nothing stored.
  */
-const HANDLES = [
-  "Two-Bag", "Silent", "Lucky", "Iron", "Velvet", "Quiet", "Smokey", "Slick", "Big", "Little",
-  "Diamond", "Cold", "Steady", "Patient", "Midnight", "Lefty", "Brass", "Sleepy", "Golden", "Stone",
-  "Sharp", "Crooked", "Gentle", "No-Sell", "Long-Haul", "Deep-Pocket", "Bottom-Line", "Night-Shift", "Old", "Sunday",
-];
 const NAMES = [
-  "Tony", "Sal", "Vinnie", "Rocco", "Lou", "Frankie", "Mickey", "Benny", "Nicky", "Joey",
-  "Dino", "Carmine", "Gus", "Moe", "Eddie", "Sonny", "Rita", "Lola", "Dolly", "Mae",
-  "Ruby", "Vera", "Fats", "Pauly", "Sammy", "Bugsy", "Mugsy", "Toots", "Ace", "Babe",
+  "Ahmose", "Seti", "Tiye", "Nefer", "Kha", "Meryt", "Ramose", "Hori", "Ipi", "Nakht",
+  "Paser", "Senu", "Bek", "Hapu", "Iset", "Neb", "Sennefer", "Tuya", "Huy", "Djedi",
+  "Henut", "Mahu", "Ptahmose", "Rensi", "Satre", "Tjia", "Wennefer", "Yuya", "Baki", "Khay",
+];
+const EPITHETS = [
+  "the Patient", "the Unsold", "Twice-Sealed", "of the Long Hold", "the Quiet", "the Heavy",
+  "Stone-Hand", "the Unmoved", "of the Deep Bag", "the Steady", "the Golden", "the Silent",
+  "Sun-Baked", "the Mason", "the Elder", "of the Night Shift", "the Ramp-Hauler", "Never-Sold",
+  "the Buried", "of the Capstone", "the Cured", "Sand-Footed", "the Keeper", "the Calm",
+  "of the First Course", "the Stubborn", "the Sealed", "Granite-Willed", "the Watchful", "the Dry",
 ];
 
 function hash(s: string) {
@@ -26,10 +28,10 @@ function hash(s: string) {
 
 export function aliasFor(addr: string) {
   const h = hash(addr.toLowerCase());
-  return `${HANDLES[h % HANDLES.length]} ${NAMES[Math.floor(h / HANDLES.length) % NAMES.length]}`;
+  return `${NAMES[h % NAMES.length]} ${EPITHETS[Math.floor(h / NAMES.length) % EPITHETS.length]}`;
 }
 
-/** What the paper prints for a wallet: its X handle, else its claimed byline, else its gang alias. */
+/** What the pyramid shows for a wallet: its X handle, else its carved throne name, else its royal alias. */
 export function nameFor(addr: string, nickname?: string, x?: { username: string } | null) {
   if (x) return { name: `@${x.username}`, claimed: true, x: true };
   return nickname ? { name: nickname, claimed: true, x: false } : { name: aliasFor(addr), claimed: false, x: false };

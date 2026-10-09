@@ -1,72 +1,117 @@
-/* The Robin Heist Gazette: a crime tabloid on cold newsprint. Ink, paper, and one red. */
+/* The Sealed Tomb: the Pharaoh's pyramid going up on a sunlit plateau, and the torchlit
+   tomb inside it. Limestone, red ochre, soot, and electrum on the capstone only. */
 :root {
-  /* newsprint (committed ground) */
-  --paper: #dedcd5;
-  --paper-deep: #cfccc3;
-  --paper-shade: #bdb9ae;
-  --paper-lift: #e9e7e1;
+  /* the plateau at noon */
+  --sky: #d5d9d8;
+  --sky-deep: #c3c8c6;
+  --sun: #ece7da;
+  --stone: #cbc1ad;
+  --stone-hi: #d8cfbd;
+  --stone-lo: #b4a890;
+  --stone-shade: #a29681;
+  --joint: #8a7f6b;
 
-  /* ink */
-  --ink: #161514;
-  --ink-soft: #3d3b37;
-  --ink-faint: #5d5a54;
-  --rule: #161514;
-  --rule-soft: rgba(22, 21, 20, 0.28);
+  /* the plateau around it */
+  --haze: #e8e4da;
+  --sand: #d5bd93;
+  --sand-far: #cbb48c;
+  --sand-shadow: rgba(92, 64, 30, 0.22);
+  --casing: #dcd2be;
+  --casing-shade: #bcb09a;
+  --far: #c8beab;
+  --far-shade: #b9ae99;
+  --mud: #8e6c4c;
+  --mud-lo: #6b4f37;
+  --skin: #6a4126;
+  --kilt: #f1ece1;
+  --water: #7fa3b8;
 
-  /* the one red: masthead, EXTRA, snitches, the live action */
-  --red: #c8241b;
-  --red-deep: #9e1a13;
-  --red-ink: #fbf3ee;
+  /* soot: type and the masons' black marks */
+  --soot: #1e1d1a;
+  --soot-soft: #3f3b34;
+  --soot-faint: #57514a;
+  --rule-soft: rgba(30, 29, 26, 0.24);
 
-  /* Robin (illustration only) */
-  --rb-ink: #141a26;
-  --rb-fur: #8d95a3;
-  --rb-fur-dark: #5f6775;
-  --rb-fur-light: #dfe2e7;
-  --rb-mask: #1d2330;
-  --rb-coat: #2f3d55;
-  --rb-brass: #d4a845;
-  --rb-coin: #e2b64e;
-  --rb-coin-dark: #a37c24;
-  --rb-sack: #c9a978;
-  --rb-tie: #c8402a;
-  --rb-hat: #1b2232;
-  --rb-hat-shine: #3a4560;
+  /* red ochre: the masons' marks, the one action, the curse */
+  --ochre: #a3311b;
+  --ochre-deep: #7f2412;
+  --ochre-ink: #f4efe6;
+
+  /* electrum: the capstone and the ten blocks in it, nothing else */
+  --gold: #d4a62c;
+  --gold-hi: #e7c35e;
+  --gold-deep: #8f6a10;
+
+  /* inside the tomb: torchlight on dark sandstone, the same in both schemes */
+  --tomb: #15120f;
+  --tomb-wall: #201b16;
+  --tomb-lift: #2a241d;
+  --tomb-rule: rgba(233, 222, 202, 0.18);
+  --dust: #e9deca;
+  --dust-soft: #c4b8a3;
+  --dust-faint: #a3967f;
+  --torch: #e8a948;
+  --ochre-lit: #e4643f;
 
   /* type */
-  --f-mast: "Alfa Slab One", Rockwell, serif;
-  --f-wire: "Courier Prime", "Courier New", monospace;
-  --f-head: "League Gothic", "Arial Narrow", sans-serif;
-  --f-body: "PT Serif", Georgia, serif;
-  --f-data: "Archivo Narrow", "Arial Narrow", sans-serif;
+  --f-display: "Dela Gothic One", "Arial Black", sans-serif;
+  --f-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "Red Hat Mono", ui-monospace, Menlo, monospace;
 
   /* rhythm */
-  --gutter: clamp(16px, 3.4vw, 44px);
-  --col-gap: clamp(18px, 2.2vw, 30px);
-  --max: 1360px;
-  --ease-press: cubic-bezier(0.16, 1, 0.3, 1);
+  --gutter: clamp(16px, 3.4vw, 48px);
+  --max: 1320px;
+  --head: 60px;
+  --ease-set: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* shape rule: newspaper is square. Only the crew card rounds, at 10px. */
-  --r-card: 10px;
+  /* stone is square; only the sun and the cartouche are round */
+  --r-card: 0px;
 
-  /* depth: paper lies on paper; one soft offset shadow, tinted to the ground */
-  --lift: 0 14px 30px -18px rgba(40, 36, 28, 0.55), 0 2px 5px -2px rgba(40, 36, 28, 0.35);
+  /* one depth: the noon sun casts a block's shadow down and to the right */
+  --cast: 10px 16px 28px -14px rgba(52, 42, 26, 0.5), 2px 3px 6px -2px rgba(52, 42, 26, 0.3);
+  --cast-dark: 10px 18px 32px -14px rgba(0, 0, 0, 0.75), 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
+
+  /* names the operator room (/memex) still reads */
+  --paper: var(--stone);
+  --paper-lift: var(--stone-hi);
+  --ink: var(--soot);
+  --ink-faint: var(--soot-faint);
+  --red: var(--ochre);
+  --lift: var(--cast);
+  --f-data: var(--f-body);
 }
 
-/* Night final: the late edition, white ink on black stock. Same red. */
+/* Night on the plateau: the same stone under moonlight, ochre lifted so it holds on dark. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #171614;
-    --paper-deep: #201f1c;
-    --paper-shade: #2c2a26;
-    --paper-lift: #23221f;
-    --ink: #e6e3da;
-    --ink-soft: #c2beb3;
-    --ink-faint: #a29e93;
-    --rule: #e6e3da;
-    --rule-soft: rgba(230, 227, 218, 0.3);
-    --red: #e2392d;
-    --red-deep: #c42b20;
-    --lift: 0 14px 30px -18px rgba(0, 0, 0, 0.8), 0 2px 5px -2px rgba(0, 0, 0, 0.6);
+    --sky: #11151a;
+    --sky-deep: #0b0e12;
+    --sun: #c9ccd0;
+    --stone: #3b362e;
+    --stone-hi: #48423a;
+    --stone-lo: #2f2b25;
+    --stone-shade: #27241f;
+    --joint: #1b1916;
+    --haze: #1d222a;
+    --sand: #352e24;
+    --sand-far: #2c261e;
+    --sand-shadow: rgba(0, 0, 0, 0.35);
+    --casing: #5a544c;
+    --casing-shade: #423d37;
+    --far: #262626;
+    --far-shade: #1f1f20;
+    --mud: #4b3a2a;
+    --mud-lo: #382b1f;
+    --skin: #a06b45;
+    --kilt: #cfc7b8;
+    --water: #6d8ea2;
+    --soot: #ece4d4;
+    --soot-soft: #cbc1af;
+    --soot-faint: #ada290;
+    --rule-soft: rgba(236, 228, 212, 0.22);
+    --ochre: #e0603c;
+    --ochre-deep: #c24b2a;
+    --ochre-ink: #1a0f0b;
+    --cast: 10px 16px 28px -14px rgba(0, 0, 0, 0.7), 2px 3px 6px -2px rgba(0, 0, 0, 0.5);
   }
 }

@@ -1,6 +1,6 @@
 /**
- * How a crew member is printed: a linked X account shows its own picture, handle and
- * badge; everyone else gets their mugshot. The X picture falls back to the mugshot if
+ * How a block is shown: a linked X account shows its own picture, handle and
+ * badge; everyone else gets their mask. The X picture falls back to the mask if
  * X ever stops serving it.
  */
 import { useState } from "react";

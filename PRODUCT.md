@@ -12,13 +12,13 @@ Delegated (chosen to match the owner's other token sites so the VPS deploy flow 
 
 ## Users
 
-- **Primary:** memecoin traders on Robinhood Chain arriving from X/Telegram, mostly on phones. Their job: understand in seconds what holding $PADS does for them, copy the CA, buy on Pons.
+- **Primary:** memecoin traders on Robinhood Chain arriving from X/Telegram, mostly on phones. Their job: understand in seconds what holding $TOMB does for them, copy the CA, buy on Pons.
 - **Secondary:** holders ("sitters") checking their own wallet: still sitting or hopped off, pad days, how many $PADS they've received, what tonight's feeding might bring.
 - **Operator:** the creator, using the hidden `/memex` route to configure the engine.
 
 ## Product Purpose
 
-$PADS is a memecoin on Robinhood Chain (chain ID 4663, launched on Pons Family v2) whose creator fees run a loop. A 24/7 bot claims the creator fees (ETH) from the Pons fee escrow whenever it reaches the next step's size and spends it on that step: a **feeding** (ETH straight to the 10 biggest wallets that have **never sold**), the **keeper's cut** (treasury), then the **sink** (buy $PADS back and burn it). Selling (sending $PADS to the Pons curve or the DEX pool) permanently disqualifies a wallet. The website is a read-only tracker and wallet checker plus landing page. Success: a visitor understands "hold big and never snitch → Robin pays you in ETH", checks their crew card, and buys.
+$TOMB is a memecoin on Robinhood Chain (chain ID 4663, launched on Pons Family v2) whose creator fees run a loop. A 24/7 bot claims the creator fees (ETH) from the Pons fee escrow whenever it reaches the next step's size and spends it on that step: a **feeding** (ETH straight to the 10 biggest wallets that have **never sold**), the **keeper's cut** (treasury), then the **sink** (buy $TOMB back and burn it). Selling (sending $TOMB to the Pons curve or the DEX pool) permanently disqualifies a wallet. The website is a read-only tracker and wallet checker plus landing page. Success: a visitor understands "hold big and never sell → the capstone gets the tribute in ETH", finds their block, and buys.
 
 Full concept: `CONCEPT.md`.
 
@@ -45,11 +45,11 @@ Every other fee-engine token on the owner's VPS burns. $PADS rewards patience di
 
 ## Brand Commitments
 
-- Name **Robin Heist**, ticker **$RBANK** (rebrand from Pepads/$PADS, 8 Oct 2026; site domain planned: robinheist.fun). Mascot **Robin**: an original raccoon in a bowler-hat disguise; natural bandit mask, bowler hat with brass band, red bow tie, gold monocle, ringed tail, sits on a coin pile next to a $ sack. Tagline **"never snitch."**, sub-line "robbing the paper hands since block one."
-- **Parody, not finance.** Never call the split a dividend, holders shareholders, or $RBANK an investment. Keep "memecoin, no promise of value" and "not a security, not a dividend" visible.
-- **No borrowed IP.** Not a fox Robin Hood (Disney), no Pepe, no other project's art.
-- Lore terms: fees → **loot**; claim → **the heist**; step 1 (ETH to top 10) → **the split**; step 2 (treasury) → **hideout fund** (always shown openly); step 3 (buyback + burn) → **burn the ledger**; eligible holders → **the crew**; sold → **snitched**; under minimum → **lookout**; leaderboard → **the vault**; wallet check → **crew card**; history → **the ledger**.
-- Voice: degen CT, calm gang-boss swagger, lowercase ("the heist ran. the crew got paid.").
+- Name **The Sealed Tomb**, ticker **$TOMB** (rebrand from Robin Heist/$RBANK before its launch, 9 Oct 2026; earlier Pepads/$PADS). Domain and X handle not chosen yet. Mascot **the Pharaoh**: original; every holder wears a royal mask (material, crown, regalia, backdrop). Tagline **"what goes in the tomb stays in the tomb."**, sub-line "never sell."
+- **Parody, not finance.** Never call the tribute a dividend, holders shareholders, or $TOMB an investment. Keep "memecoin, no promise of value" and "not a security, not a dividend" visible. The pyramid must never read as recruitment: say plainly that nobody earns anything for bringing anyone in.
+- **No borrowed IP.** No Tutankhamun mask replica, no film or game pharaohs, no other project's art. Historical Egyptian regalia (nemes, crowns, ankh, uraeus) are fine.
+- Lore terms: fees → **offerings**; claim → **the rite**; step 1 (ETH to top 10) → **the tribute**; step 2 (treasury) → **builders' share** (always shown openly); step 3 (buyback + burn) → **into the afterlife**; eligible holders → **sealed** blocks; still under hold time → **curing**; under minimum → **loose stone**; sold → **cursed**; excluded contracts → **overseers**; top 10 → **the capstone**; leaderboard → **the pyramid**; wallet check → **your block**; nickname → **throne name**; mugshot booth → **mask workshop**; generated name → **royal alias**; history → **the inscriptions**.
+- Voice: degen CT, calm, a little grand ("the rite ran. the capstone got paid.").
 
 ## Evidence on Hand
 

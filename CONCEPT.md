@@ -1,60 +1,65 @@
-# Robin Heist ($RBANK) · konsep
+# The Sealed Tomb ($TOMB) · konsep
 
-Rebrand 8 Okt 2026 dari Pepads ($PADS). Mekanik engine tidak berubah; nama, ticker, maskot, UI dan lore diganti total. Token baru di-launch di Pons; engine dipindah ke CA baru, $PADS lama berhenti dapat split.
+Rebrand 9 Okt 2026 dari Robin Heist ($RBANK), sebelum $RBANK sempat di-launch (sebelumnya lagi: Pepads/$PADS). Mekanik engine, backend, fitur dan tokenomics tidak berubah; yang diganti hanya nama, ticker, lore dan UI.
 
-> Status: situs dan konten siap. Menunggu launch $RBANK, domain robinheist.fun, dan ganti handle X.
+> Status: situs siap (UI baru). Belum ada: launch $TOMB, domain, handle X. Konten X dan aset Remotion lama masih bertema Robin Heist dan perlu dibuat ulang.
 
 ---
 
 ## 1. Lore
 
-**Robin** adalah rakun yang menyamar jadi pengusaha. Topeng banditnya bulu asli; topi bowler, dasi kupu-kupu dan monokel cuma kostum bankir. Tiap trade di $RBANK menjatuhkan fee, Robin "merampoknya", lalu membagi hasilnya ke crew yang paling setia. Siapa pun yang jual dianggap **snitch**: keluar dari crew, selamanya.
+**The Pharaoh** sedang membangun piramidanya. Tiap trade $TOMB meninggalkan **offering** (fee) di depan makam. Saat mangkuk persembahan cukup penuh, **rite** dijalankan: emasnya dibagikan ke **10 balok terbesar** yang duduk di **capstone** emas di puncak piramida. Siapa pun yang menjual dianggap merampok makam: **cursed**, baloknya dicabut dari piramida, selamanya.
 
-- Tagline: **"never snitch."**
-- Sub-tagline: *"robbing the paper hands since block one."*
-- Voice: degen CT santai, lowercase, sedikit sombong ala bos geng ("the heist ran. the crew got paid.").
-- Parodi, bukan lembaga keuangan sungguhan. **Bukan** dividen, saham, atau investasi: selalu pakai istilah plesetan dan disclaimer.
+- Tagline: **"what goes in the tomb stays in the tomb."**
+- Sub-tagline: *"never sell."*
+- Voice: degen CT santai, sedikit megah ("the rite ran. the capstone got paid.").
+- Parodi, bukan lembaga keuangan. **Bukan** dividen, saham, atau investasi. Piramida di sini adalah makam, **bukan skema rekrutmen**: tidak ada yang dapat apa-apa karena mengajak orang lain. Disclaimer selalu tampil.
 
 | Istilah | Arti di mesin |
 |---|---|
-| **the vault** | ekosistem $RBANK / leaderboard di situs |
-| **loot** | creator fee (ETH) yang masuk ke escrow Pons |
-| **the heist** | engine claim fee saat escrow mencapai ukuran langkah berikutnya |
-| **the split** | langkah 1: 0.01 ETH dikirim sebagai ETH ke 10 bag terbesar, dibagi sesuai saldo |
-| **hideout fund** | langkah 2: 0.02 ETH ke treasury, dipamerkan terbuka |
-| **burn the ledger** | langkah 3: 0.01 ETH buyback $RBANK lalu kirim ke 0x…dEaD |
-| **the crew** | holder yang belum pernah jual dan saldonya ≥ minimum |
-| **snitched** | wallet yang pernah jual → keluar permanen |
-| **lookout** | holder di bawah minimum |
-| **crew card** | cek wallet di situs |
-| **the ledger** | riwayat semua heist + tx |
+| **offering** | creator fee (ETH) yang masuk ke escrow Pons |
+| **the rite** | engine claim fee saat escrow mencapai ukuran langkah berikutnya |
+| **the tribute** | langkah 1: 0.01 ETH dikirim sebagai ETH ke 10 balok terbesar, dibagi sesuai saldo |
+| **builders' share** | langkah 2: 0.02 ETH ke treasury, dipamerkan terbuka |
+| **into the afterlife** | langkah 3: 0.01 ETH buyback $TOMB lalu kirim ke 0x…dEaD |
+| **sealed** | holder yang belum pernah jual dan saldonya ≥ minimum |
+| **curing** | sealed, tapi $TOMB pertamanya belum melewati hold time |
+| **loose stone** | holder di bawah minimum |
+| **cursed** | wallet yang pernah jual → keluar permanen |
+| **overseer** | curve, engine, treasury, dead address (tidak pernah dapat tribute) |
+| **the capstone** | 10 balok terbesar |
+| **the pyramid** | leaderboard di situs |
+| **your block** | cek wallet di situs |
+| **throne name** / **mask workshop** | nickname + avatar yang bisa diatur holder |
+| **royal alias** | nama otomatis untuk wallet yang belum set nama |
+| **the inscriptions** | riwayat semua rite + tx |
 
-## 2. Maskot: Robin (original)
+## 2. Maskot: the Pharaoh (original)
 
-- Rakun abu-abu, topeng bandit hitam alami di sekitar mata, ekor bergelang.
-- Kostum menyamar: topi bowler hitam dengan pita kuningan, dasi kupu-kupu merah, rompi navy, monokel emas berantai.
-- Duduk di tumpukan koin emas, karung uang bertanda $ di sampingnya.
-- **Bukan rubah** (Robin Hood rubah identik dengan Disney) dan bukan karakter milik proyek lain.
+- Tiap holder memakai **topeng kerajaan** yang dirakit dari 4 bagian: material (emas, lapis, batu kapur, obsidian, perunggu), mahkota (kepala polos, nemes, mahkota biru, mahkota putih, mahkota ganda), regalia (tanpa, janggut palsu, kohl, uraeus, ankh, kalung lebar), latar (6 warna). Jumlah opsi 5/5/6/6 sengaja sama dengan validasi `MUGSHOT_PARTS` di backend.
+- Logo: topeng emas dengan nemes bergaris lapis dan janggut palsu.
+- **Bukan** replika topeng Tutankhamun, bukan firaun dari film/game, bukan karya proyek lain.
 
 ## 3. Visual
 
-- Palet "brankas malam": navy baja `#15243b`, kertas uang `#f3ecdc`, kuningan `#e2b64e`, hijau uang `#83d17a`, merah alarm `#e0482d`.
-- Latar: panel baja berpaku keling. Papan split-flap tetap dipakai sebagai **Heist board** (papan kurs).
-- Font: **Alfa Slab One** untuk brand dan judul utama (poster WANTED klasik), Big Shoulders untuk judul bagian, Barlow Condensed untuk flap.
+Lihat `DESIGN.md`. Ringkasnya: piramida yang sedang dibangun di siang terik (batu kapur, tanda tukang batu dari oker merah, capstone emas hanya untuk top 10), lalu saat scroll pengunjung "berjalan masuk" ke pintu piramida dan halaman berganti ke interior makam yang diterangi obor. Font: Dela Gothic One, Schibsted Grotesk, Red Hat Mono.
 
 ## 4. Mekanik (sama dengan engine yang berjalan)
 
-1. **The heist**: tiap 10 detik engine cek escrow Pons. Kalau mencapai ukuran langkah berikutnya → claim.
-2. **The split** (0.01 ETH) → ETH langsung ke top 10 crew berdasarkan saldo, dibagi sesuai porsi saldo. 1 crew → dia dapat semua.
-3. **Hideout fund** (0.02 ETH) → treasury.
-4. **Burn the ledger** (0.01 ETH) → buyback $RBANK, yang dibeli saja yang dibakar (bag dev di wallet bot tidak tersentuh).
-5. Ulang dari 1. Porsi satu siklus: 25% crew / 50% treasury / 25% burn, ditampilkan terbuka.
+1. **The rite**: tiap 10 detik engine cek escrow Pons. Kalau mencapai ukuran langkah berikutnya → claim.
+2. **The tribute** (0.01 ETH) → ETH langsung ke 10 balok terbesar, dibagi sesuai porsi saldo.
+3. **Builders' share** (0.02 ETH) → treasury.
+4. **Into the afterlife** (0.01 ETH) → buyback $TOMB, yang dibeli saja yang dibakar.
+5. Ulang dari 1. Porsi satu siklus: 25% / 50% / 25%, ditampilkan terbuka.
 
-Syarat crew: tidak pernah jual, saldo ≥ 100.000 $RBANK, hold time sesuai `minHoldHours` (live: 0).
+Syarat sealed: tidak pernah jual, saldo ≥ 100.000 $TOMB, hold time sesuai `minHoldHours`.
 
-## 5. Migrasi dari $PADS
+## 5. Yang masih menyebut nama lama (backend tidak disentuh atas permintaan owner)
 
-- Launch $RBANK di Pons **dari wallet bot yang sama** (`0x33E1…6213`) supaya fee masuk ke escrow yang dibaca engine.
-- Di `/memex`, ganti CA ke $RBANK pakai `ADMIN_SECRET`. State holder dan riwayat round ter-reset untuk token baru.
-- $PADS lama berhenti dapat split. Umumkan terbuka (post migrasi di `konten-x/caption.md`), jangan diam-diam.
-- Engine membaca escrow Pons per wallet creator (`balanceOf(wallet)`). Kalau Pons menggabungkan fee semua token dari creator yang sama, fee $PADS yang masih masuk ikut terpakai untuk siklus $RBANK. Belum diverifikasi; cek di escrow setelah launch.
+- Teks yang ditandatangani wallet saat set throne name / link X: `"Robin Heist: claim my byline"`, `"Robin Heist: link my X account"` (`bot/byline.ts`).
+- Pesan error engine: `"Only wallets holding $RBANK can …"` (`bot/byline.ts`, `bot/pads-engine.ts`).
+- Daftar kata terlarang nickname masih berisi `robin`, `heist`, `rbank` (belum `tomb`, `pharaoh`).
+- `SITE_URL` default `https://robinheist.fun` (`bot/xlink.ts`) dan `scripts/site-mode.sh` masih menunjuk domain/proses lama.
+- `X_URL` di `src/lib/api.ts` masih `x.com/pepadsrh`.
+
+Semua itu hanya teks, bukan logika. Ganti saat domain dan handle baru sudah pasti.

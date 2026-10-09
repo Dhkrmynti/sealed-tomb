@@ -37,11 +37,11 @@ export interface PondRow {
   padDays: number;
   /** ETH received from feedings. */
   received: string;
-  /** The holder's claimed byline, empty when unclaimed (the site then prints a gang alias). */
+  /** The holder's carved throne name, empty when unclaimed (the site then shows a royal alias). */
   nickname?: string;
-  /** Claimed mugshot parts [fur, hat, accessory, background]; null means the generated one. */
+  /** Chosen mask parts [material, crown, regalia, backdrop]; null means the generated one. */
   pp?: number[] | null;
-  /** Linked X account; when set it replaces the nickname and mugshot. */
+  /** Linked X account; when set it replaces the throne name and mask. */
   x?: XProfile | null;
 }
 
@@ -88,9 +88,9 @@ export interface RoundRow {
 
 /** The cycle, in plain names. */
 export const STEP: Record<RoundKind, { name: string; does: string }> = {
-  feeding: { name: "The split", does: "ETH to the top 10 of the crew" },
-  keeper: { name: "Hideout fund", does: "to the treasury" },
-  sink: { name: "Burn the ledger", does: "buy $RBANK and burn it" },
+  feeding: { name: "The tribute", does: "ETH to the 10 biggest blocks" },
+  keeper: { name: "Builders' share", does: "to the builders' treasury" },
+  sink: { name: "Into the afterlife", does: "buy $TOMB and burn it" },
 };
 
 export const DEFAULT_STEPS: Status["cycle"]["steps"] = [
@@ -198,7 +198,7 @@ export async function claimByline(addr: string, nickname: string, pp: number[], 
     body: JSON.stringify({ addr, name: nickname, pp, nonce, signature }),
   });
   const j = await r.json().catch(() => ({ success: false, error: "The engine didn't answer." }));
-  if (!j.success) throw new Error(j.error || "Couldn't save the byline.");
+  if (!j.success) throw new Error(j.error || "Couldn't carve the throne name.");
   return j.data as { nickname: string; pp: number[] };
 }
 
@@ -275,7 +275,7 @@ const seedAddrs = [
 export const demoPond = (): { total: number; topN: number; rows: PondRow[] } => {
   const base = seedPond();
   const rows = base.rows.map((row) => ({ ...row, ...demoBylines[row.addr.toLowerCase()] }));
-  // A visitor who tries the booth with their own wallet joins the table, inside the top 10.
+  // A visitor who tries the booth with their own wallet joins the pyramid, inside the capstone.
   for (const [addr, b] of Object.entries(demoBylines)) {
     if (rows.some((row) => row.addr.toLowerCase() === addr)) continue;
     rows.push({ rank: 0, addr, inTop: true, balance: String(3.5e6), firstIn: now() - 5 * 86400, padDays: 5, received: "0.0123", nickname: "", pp: null, x: null, ...b });
@@ -300,9 +300,9 @@ const seedPond = (): { total: number; topN: number; rows: PondRow[] } => {
       firstIn: now() - days[i] * 86400 - 3600 * i,
       padDays: days[i],
       received: String(rec[i]),
-      nickname: ["Big Tony Two-Bags", "", "diamondpaws", "", "", "Quiet Money Mae", "", "", "", "", "", ""][i] || "",
+      nickname: ["Stone-Hand Seti", "", "sandpaws", "", "", "Meryt Never-Sold", "", "", "", "", "", ""][i] || "",
       pp: [[1, 4, 3, 3], null, [2, 0, 2, 4], null, null, [4, 2, 4, 5], null, null, null, null, null, null][i],
-      x: [null, { username: "vaultwhale", name: "Vault Whale", avatar: "/favicon-192.png", verified: "blue" }, null, null, { username: "lefty_lou", name: "Lefty Lou", avatar: "", verified: "" }, null, null, null, null, null, null, null][i],
+      x: [null, { username: "capstonewhale", name: "Capstone Whale", avatar: "/favicon-192.png", verified: "blue" }, null, null, { username: "kohl_eyed", name: "Kohl Eyed", avatar: "", verified: "" }, null, null, null, null, null, null, null][i],
     })),
   };
 };

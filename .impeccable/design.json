@@ -1,617 +1,788 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-08T14:09:58.319212+00:00",
-  "title": "Design System: The Robin Heist Gazette",
+  "generatedAt": "2026-10-08T21:26:42.693247+00:00",
+  "title": "Design System: The Sealed Tomb",
   "extensions": {
     "colorMeta": {
-      "paper": {
+      "sky": {
         "role": "neutral",
-        "displayName": "Newsprint",
-        "canonical": "#dedcd5",
+        "displayName": "Noon Sky",
+        "canonical": "#d5d9d8",
         "tonalRamp": [
-          "#2b2922",
-          "#4a473a",
-          "#6a6553",
-          "#89836c",
-          "#a39d8a",
-          "#bcb8a9",
-          "#d7d4cc",
-          "#f4f3f1"
+          "#4a4b4b",
+          "#787a7a",
+          "#a7aaa9",
+          "#d5d9d8",
+          "#e1e3e2",
+          "#e9eaea",
+          "#eff0f0",
+          "#f4f4f4"
         ],
-        "cssVar": "--paper"
+        "cssVar": "--sky"
       },
-      "paper-deep": {
+      "sky-deep": {
         "role": "neutral",
-        "displayName": "Back Stock",
-        "canonical": "#cfccc3",
+        "displayName": "Haze",
+        "canonical": "#c3c8c6",
         "tonalRamp": [
-          "#2a2822",
-          "#4a463b",
-          "#696454",
-          "#88816d",
-          "#a29c8b",
-          "#bbb7aa",
-          "#d6d4cc",
-          "#f4f3f1"
+          "#444645",
+          "#6f7170",
+          "#999d9b",
+          "#c3c8c6",
+          "#d5d8d7",
+          "#e2e4e3",
+          "#ecedec",
+          "#f2f3f2"
         ],
-        "cssVar": "--paper-deep"
+        "cssVar": "--sky-deep"
       },
-      "paper-shade": {
+      "sun": {
         "role": "neutral",
-        "displayName": "Shade Stock",
-        "canonical": "#bdb9ae",
+        "displayName": "Sun Disc",
+        "canonical": "#ece7da",
         "tonalRamp": [
-          "#2a2822",
-          "#49453c",
-          "#686355",
-          "#87806e",
-          "#a19b8c",
-          "#bab6ab",
-          "#d6d3cc",
-          "#f4f3f1"
+          "#514f4b",
+          "#84827b",
+          "#b8b4aa",
+          "#ece7da",
+          "#f0ece4",
+          "#f2f0eb",
+          "#f4f3f0",
+          "#f5f5f4"
         ],
-        "cssVar": "--paper-shade"
+        "cssVar": "--sun"
       },
-      "paper-lift": {
+      "stone": {
         "role": "neutral",
-        "displayName": "Fresh Sheet",
-        "canonical": "#e9e7e1",
+        "displayName": "Limestone",
+        "canonical": "#cbc1ad",
         "tonalRamp": [
-          "#2c2920",
-          "#4c4738",
-          "#6d6650",
-          "#8d8468",
-          "#a79e86",
-          "#beb8a7",
-          "#d8d5ca",
-          "#f4f3f0"
-        ],
-        "cssVar": "--paper-lift"
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Carbon Ink",
-        "canonical": "#161514",
-        "tonalRamp": [
-          "#282624",
-          "#45423f",
-          "#635e5a",
-          "#807a75",
-          "#9b9691",
-          "#b6b2af",
-          "#d3d1cf",
-          "#f3f2f2"
-        ],
-        "cssVar": "--ink",
-        "note": "--rule is an alias of the same ink."
-      },
-      "ink-soft": {
-        "role": "neutral",
-        "displayName": "Worn Ink",
-        "canonical": "#3d3b37",
-        "tonalRamp": [
-          "#282724",
-          "#46433f",
-          "#636059",
-          "#817d74",
-          "#9c9891",
-          "#b6b4af",
-          "#d3d2cf",
-          "#f3f2f2"
-        ],
-        "cssVar": "--ink-soft"
-      },
-      "ink-faint": {
-        "role": "neutral",
-        "displayName": "Faded Ink",
-        "canonical": "#5d5a54",
-        "tonalRamp": [
-          "#282724",
-          "#46433f",
-          "#63605a",
-          "#817c74",
-          "#9c9891",
-          "#b6b4af",
-          "#d3d2cf",
-          "#f3f2f2"
-        ],
-        "cssVar": "--ink-faint"
-      },
-      "rule-soft": {
-        "role": "neutral",
-        "displayName": "Ghost Rule",
-        "canonical": "rgba(22, 21, 20, 0.28)",
-        "tonalRamp": [
-          "#282624",
-          "#45423f",
-          "#635e5a",
-          "#807a75",
-          "#9b9691",
-          "#b6b2af",
-          "#d3d1cf",
-          "#f3f2f2"
-        ],
-        "note": "Alpha hairline; ramp shows its base ink.",
-        "cssVar": "--rule-soft"
-      },
-      "red": {
-        "role": "primary",
-        "displayName": "Tabloid Red",
-        "canonical": "#c8241b",
-        "tonalRamp": [
-          "#430c09",
-          "#751510",
-          "#a61e16",
-          "#d8271d",
-          "#e64f47",
-          "#ed7e78",
-          "#f4b2ae",
-          "#fceae9"
-        ],
-        "cssVar": "--red"
-      },
-      "red-deep": {
-        "role": "primary",
-        "displayName": "Pressed Red",
-        "canonical": "#9e1a13",
-        "tonalRamp": [
-          "#440b08",
-          "#76130e",
-          "#a81c14",
-          "#db241a",
-          "#e94d44",
-          "#ef7c76",
-          "#f5b1ad",
-          "#fce9e8"
-        ],
-        "cssVar": "--red-deep"
-      },
-      "red-ink": {
-        "role": "primary",
-        "displayName": "Red Paper",
-        "canonical": "#fbf3ee",
-        "tonalRamp": [
-          "#3e210f",
-          "#6b3919",
-          "#995124",
-          "#c6692f",
-          "#d78856",
-          "#e2a883",
-          "#eecbb5",
-          "#faf0ea"
-        ],
-        "cssVar": "--red-ink"
-      },
-      "night-paper": {
-        "role": "neutral",
-        "displayName": "Night Stock",
-        "canonical": "#171614",
-        "tonalRamp": [
-          "#292724",
           "#47443e",
-          "#656158",
+          "#736d63",
+          "#9f9788",
+          "#cbc1ad",
+          "#dad4c7",
+          "#e5e1d9",
+          "#edebe7",
+          "#f3f2f1"
+        ],
+        "cssVar": "--stone"
+      },
+      "stone-hi": {
+        "role": "neutral",
+        "displayName": "Lit Limestone",
+        "canonical": "#d8cfbd",
+        "tonalRamp": [
+          "#4b4842",
+          "#7a756b",
+          "#a9a294",
+          "#d8cfbd",
+          "#e2ddd1",
+          "#eae6df",
+          "#f0eeeb",
+          "#f4f3f2"
+        ],
+        "cssVar": "--stone-hi"
+      },
+      "stone-lo": {
+        "role": "neutral",
+        "displayName": "Weathered Limestone",
+        "canonical": "#b4a890",
+        "tonalRamp": [
+          "#403c35",
+          "#676053",
+          "#8d8472",
+          "#b4a890",
+          "#cbc3b4",
+          "#dcd7cd",
+          "#e9e6e2",
+          "#f1f0ee"
+        ],
+        "cssVar": "--stone-lo"
+      },
+      "stone-shade": {
+        "role": "neutral",
+        "displayName": "East Face",
+        "canonical": "#a29681",
+        "tonalRamp": [
+          "#3a3730",
+          "#5d574b",
+          "#7f7666",
+          "#a29681",
+          "#bfb8aa",
+          "#d4d0c7",
+          "#e5e3df",
+          "#f0efed"
+        ],
+        "cssVar": "--stone-shade"
+      },
+      "joint": {
+        "role": "neutral",
+        "displayName": "Mortar",
+        "canonical": "#8a7f6b",
+        "tonalRamp": [
+          "#33302a",
+          "#504a40",
+          "#6d6555",
+          "#8a7f6b",
+          "#b0a99c",
+          "#cbc6be",
+          "#e0deda",
+          "#eeedec"
+        ],
+        "cssVar": "--joint"
+      },
+      "haze": {
+        "role": "neutral",
+        "displayName": "haze",
+        "canonical": "#e8e4da",
+        "tonalRamp": [
+          "#4f4e4b",
+          "#82807b",
+          "#b5b2aa",
+          "#e8e4da",
+          "#edeae4",
+          "#f0efeb",
+          "#f3f2f0",
+          "#f5f5f4"
+        ],
+        "cssVar": "--haze"
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "sand",
+        "canonical": "#d5bd93",
+        "tonalRamp": [
+          "#4a4236",
+          "#786b55",
+          "#a79474",
+          "#d5bd93",
+          "#e1d1b6",
+          "#e9dfce",
+          "#efebe2",
+          "#f4f2ef"
+        ],
+        "cssVar": "--sand"
+      },
+      "sand-far": {
+        "role": "neutral",
+        "displayName": "sand-far",
+        "canonical": "#cbb48c",
+        "tonalRamp": [
+          "#474034",
+          "#736751",
+          "#9f8d6f",
+          "#cbb48c",
+          "#dacbb1",
+          "#e5dccc",
+          "#ede9e1",
+          "#f3f1ee"
+        ],
+        "cssVar": "--sand-far"
+      },
+      "casing": {
+        "role": "neutral",
+        "displayName": "casing",
+        "canonical": "#dcd2be",
+        "tonalRamp": [
+          "#4c4943",
+          "#7c776c",
+          "#aca495",
+          "#dcd2be",
+          "#e5dfd2",
+          "#ece8e0",
+          "#f1efeb",
+          "#f4f3f2"
+        ],
+        "cssVar": "--casing"
+      },
+      "casing-shade": {
+        "role": "neutral",
+        "displayName": "casing-shade",
+        "canonical": "#bcb09a",
+        "tonalRamp": [
+          "#423f38",
+          "#6b6459",
+          "#938a79",
+          "#bcb09a",
+          "#d0c8ba",
+          "#dfdad1",
+          "#eae8e4",
+          "#f2f1ef"
+        ],
+        "cssVar": "--casing-shade"
+      },
+      "far": {
+        "role": "neutral",
+        "displayName": "far",
+        "canonical": "#c8beab",
+        "tonalRamp": [
+          "#46433d",
+          "#716c62",
+          "#9d9586",
+          "#c8beab",
+          "#d8d2c5",
+          "#e4e0d8",
+          "#edebe7",
+          "#f3f2f0"
+        ],
+        "cssVar": "--far"
+      },
+      "mud": {
+        "role": "neutral",
+        "displayName": "mud",
+        "canonical": "#8e6c4c",
+        "tonalRamp": [
+          "#342a21",
+          "#52402f",
+          "#70563e",
+          "#8e6c4c",
+          "#b29c88",
+          "#ccbfb2",
+          "#e1dad4",
+          "#eeece9"
+        ],
+        "cssVar": "--mud"
+      },
+      "mud-lo": {
+        "role": "neutral",
+        "displayName": "mud-lo",
+        "canonical": "#6b4f37",
+        "tonalRamp": [
+          "#2a221a",
+          "#403124",
+          "#55402d",
+          "#6b4f37",
+          "#9c897a",
+          "#beb3aa",
+          "#dad5d0",
+          "#ece9e8"
+        ],
+        "cssVar": "--mud-lo"
+      },
+      "soot": {
+        "role": "neutral",
+        "displayName": "Soot",
+        "canonical": "#1e1d1a",
+        "tonalRamp": [
+          "#131212",
+          "#171614",
+          "#1a1a17",
+          "#1e1d1a",
+          "#6a6967",
+          "#a09f9e",
+          "#cbcbca",
+          "#e6e6e5"
+        ],
+        "cssVar": "--soot"
+      },
+      "soot-soft": {
+        "role": "neutral",
+        "displayName": "Worn Soot",
+        "canonical": "#3f3b34",
+        "tonalRamp": [
+          "#1d1c19",
+          "#282622",
+          "#34302b",
+          "#3f3b34",
+          "#7f7c78",
+          "#adaba8",
+          "#d1d1cf",
+          "#e8e8e7"
+        ],
+        "cssVar": "--soot-soft"
+      },
+      "soot-faint": {
+        "role": "neutral",
+        "displayName": "Faded Soot",
+        "canonical": "#57514a",
+        "tonalRamp": [
+          "#242220",
+          "#35322e",
+          "#46413c",
+          "#57514a",
+          "#8f8b86",
+          "#b6b4b1",
+          "#d6d5d4",
+          "#eaeae9"
+        ],
+        "cssVar": "--soot-faint"
+      },
+      "ochre": {
+        "role": "primary",
+        "displayName": "Red Ochre",
+        "canonical": "#a3311b",
+        "tonalRamp": [
+          "#3b1812",
+          "#5d2115",
+          "#802918",
+          "#a3311b",
+          "#c07668",
+          "#d5a79e",
+          "#e5cfca",
+          "#f0e7e6"
+        ],
+        "cssVar": "--ochre"
+      },
+      "ochre-deep": {
+        "role": "primary",
+        "displayName": "Pressed Ochre",
+        "canonical": "#7f2412",
+        "tonalRamp": [
+          "#30150f",
+          "#4a1a10",
+          "#651f11",
+          "#7f2412",
+          "#a96e62",
+          "#c6a29b",
+          "#deccc8",
+          "#ede6e5"
+        ],
+        "cssVar": "--ochre-deep"
+      },
+      "ochre-ink": {
+        "role": "primary",
+        "displayName": "Linen",
+        "canonical": "#f4efe6",
+        "tonalRamp": [
+          "#53524f",
+          "#898681",
+          "#bebab4",
+          "#f4efe6",
+          "#f5f1ec",
+          "#f5f3f0",
+          "#f6f5f3",
+          "#f6f5f5"
+        ],
+        "cssVar": "--ochre-ink"
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Electrum",
+        "canonical": "#d4a62c",
+        "tonalRamp": [
+          "#493c17",
+          "#785f1e",
+          "#a68325",
+          "#d4a62c",
+          "#e0c273",
+          "#e8d6a5",
+          "#efe6ce",
+          "#f3f0e7"
+        ],
+        "cssVar": "--gold"
+      },
+      "gold-hi": {
+        "role": "secondary",
+        "displayName": "Polished Electrum",
+        "canonical": "#e7c35e",
+        "tonalRamp": [
+          "#4f4426",
+          "#826f39",
+          "#b4994b",
+          "#e7c35e",
+          "#ecd593",
+          "#f0e2b9",
+          "#f3ecd8",
+          "#f5f2eb"
+        ],
+        "cssVar": "--gold-hi"
+      },
+      "gold-deep": {
+        "role": "secondary",
+        "displayName": "Tarnished Electrum",
+        "canonical": "#8f6a10",
+        "tonalRamp": [
+          "#352a0f",
+          "#533f0f",
+          "#715510",
+          "#8f6a10",
+          "#b39b61",
+          "#cdbe9a",
+          "#e1dac8",
+          "#eeece5"
+        ],
+        "cssVar": "--gold-deep"
+      },
+      "tomb": {
+        "role": "neutral",
+        "displayName": "The Tomb",
+        "canonical": "#15120f",
+        "tonalRamp": [
+          "#100f0e",
+          "#12100f",
+          "#13110f",
+          "#15120f",
+          "#646260",
+          "#9c9b9a",
+          "#c9c8c8",
+          "#e5e5e5"
+        ],
+        "cssVar": "--tomb"
+      },
+      "tomb-wall": {
+        "role": "neutral",
+        "displayName": "Tomb Wall",
+        "canonical": "#201b16",
+        "tonalRamp": [
+          "#131210",
+          "#181512",
+          "#1c1814",
+          "#201b16",
+          "#6b6864",
+          "#a09e9c",
+          "#cbcac9",
+          "#e6e6e5"
+        ],
+        "cssVar": "--tomb-wall"
+      },
+      "tomb-lift": {
+        "role": "neutral",
+        "displayName": "Lit Wall",
+        "canonical": "#2a241d",
+        "tonalRamp": [
+          "#161512",
+          "#1d1a16",
+          "#231f1a",
+          "#2a241d",
+          "#716e69",
+          "#a4a29f",
+          "#cdcccb",
+          "#e7e6e6"
+        ],
+        "cssVar": "--tomb-lift"
+      },
+      "dust": {
+        "role": "neutral",
+        "displayName": "Dust",
+        "canonical": "#e9deca",
+        "tonalRamp": [
+          "#504c46",
           "#837d72",
-          "#9e998f",
-          "#b8b4ad",
-          "#d4d2ce",
-          "#f3f3f1"
+          "#b6ad9e",
+          "#e9deca",
+          "#eee6d9",
+          "#f1ece4",
+          "#f3f1ed",
+          "#f5f4f3"
         ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
+        "cssVar": "--dust"
       },
-      "night-paper-deep": {
+      "dust-soft": {
         "role": "neutral",
-        "displayName": "Night Back Stock",
-        "canonical": "#201f1c",
+        "displayName": "Settled Dust",
+        "canonical": "#c4b8a3",
         "tonalRamp": [
-          "#292824",
-          "#47453e",
-          "#656158",
-          "#837e72",
-          "#9d9a8f",
-          "#b8b5ad",
-          "#d4d3ce",
-          "#f3f3f1"
+          "#45413b",
+          "#6f695d",
+          "#9a9080",
+          "#c4b8a3",
+          "#d6cec0",
+          "#e2ddd5",
+          "#eceae5",
+          "#f2f1f0"
         ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
+        "cssVar": "--dust-soft"
       },
-      "night-paper-shade": {
+      "dust-faint": {
         "role": "neutral",
-        "displayName": "Night Shade Stock",
-        "canonical": "#2c2a26",
+        "displayName": "Faint Dust",
+        "canonical": "#a3967f",
         "tonalRamp": [
-          "#292723",
-          "#47443d",
-          "#656157",
-          "#837d71",
-          "#9e998f",
-          "#b8b4ad",
-          "#d4d2ce",
-          "#f3f3f1"
+          "#3b3730",
+          "#5d574a",
+          "#807665",
+          "#a3967f",
+          "#c0b8a9",
+          "#d5d0c6",
+          "#e5e3de",
+          "#f0efed"
         ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
+        "cssVar": "--dust-faint"
       },
-      "night-paper-lift": {
+      "torch": {
+        "role": "tertiary",
+        "displayName": "Torchlight",
+        "canonical": "#e8a948",
+        "tonalRamp": [
+          "#4f3c1f",
+          "#82612d",
+          "#b5853a",
+          "#e8a948",
+          "#edc485",
+          "#f0d7b0",
+          "#f3e7d3",
+          "#f5f0e9"
+        ],
+        "cssVar": "--torch"
+      },
+      "ochre-lit": {
+        "role": "primary",
+        "displayName": "Lit Ochre",
+        "canonical": "#e4643f",
+        "tonalRamp": [
+          "#4e281d",
+          "#803c28",
+          "#b25034",
+          "#e4643f",
+          "#ea977f",
+          "#efbcad",
+          "#f2d9d1",
+          "#f5ebe8"
+        ],
+        "cssVar": "--ochre-lit"
+      },
+      "night-sky": {
         "role": "neutral",
-        "displayName": "Night Fresh Sheet",
-        "canonical": "#23221f",
+        "displayName": "Night Sky",
+        "canonical": "#11151a",
         "tonalRamp": [
-          "#292724",
-          "#46443e",
-          "#646159",
-          "#827e73",
-          "#9d9a90",
-          "#b7b5ae",
-          "#d4d2ce",
-          "#f3f3f1"
+          "#0f1012",
+          "#101214",
+          "#101317",
+          "#11151a",
+          "#616467",
+          "#9a9c9e",
+          "#c8c9ca",
+          "#e5e5e5"
         ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
+        "cssVar": "--sky"
       },
-      "night-ink": {
+      "night-stone": {
+        "role": "neutral",
+        "displayName": "Moonlit Limestone",
+        "canonical": "#3b362e",
+        "tonalRamp": [
+          "#1c1a18",
+          "#26231f",
+          "#302d27",
+          "#3b362e",
+          "#7c7974",
+          "#aba9a6",
+          "#d1d0ce",
+          "#e8e8e7"
+        ],
+        "cssVar": "--stone"
+      },
+      "night-stone-hi": {
+        "role": "neutral",
+        "displayName": "Moonlit Face",
+        "canonical": "#48423a",
+        "tonalRamp": [
+          "#1f1e1b",
+          "#2d2a25",
+          "#3a3630",
+          "#48423a",
+          "#85817c",
+          "#b0aeab",
+          "#d3d2d0",
+          "#e9e8e8"
+        ],
+        "cssVar": "--stone-hi"
+      },
+      "night-soot": {
         "role": "neutral",
         "displayName": "Night Ink",
-        "canonical": "#e6e3da",
+        "canonical": "#ece4d4",
         "tonalRamp": [
-          "#2e2a1f",
-          "#4f4935",
-          "#71674c",
-          "#928663",
-          "#aba182",
-          "#c1baa4",
-          "#dad6c8",
-          "#f5f3f0"
+          "#514e49",
+          "#848078",
+          "#b8b2a6",
+          "#ece4d4",
+          "#f0eae0",
+          "#f2efe8",
+          "#f4f2ef",
+          "#f5f5f3"
         ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
+        "cssVar": "--soot"
       },
-      "night-ink-soft": {
-        "role": "neutral",
-        "displayName": "Night Worn Ink",
-        "canonical": "#c2beb3",
-        "tonalRamp": [
-          "#2a2822",
-          "#4a463b",
-          "#696354",
-          "#88816d",
-          "#a29c8b",
-          "#bbb6aa",
-          "#d6d3cc",
-          "#f4f3f1"
-        ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
-      },
-      "night-ink-faint": {
-        "role": "neutral",
-        "displayName": "Night Faded Ink",
-        "canonical": "#a29e93",
-        "tonalRamp": [
-          "#292823",
-          "#47453d",
-          "#656257",
-          "#847f71",
-          "#9e9a8f",
-          "#b8b5ad",
-          "#d5d3ce",
-          "#f3f3f1"
-        ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
-      },
-      "night-rule-soft": {
-        "role": "neutral",
-        "displayName": "Night Ghost Rule",
-        "canonical": "rgba(230, 227, 218, 0.3)",
-        "tonalRamp": [
-          "#2e2a1f",
-          "#4f4935",
-          "#71674c",
-          "#928663",
-          "#aba182",
-          "#c1baa4",
-          "#dad6c8",
-          "#f5f3f0"
-        ],
-        "note": "Alpha hairline; ramp shows its base ink.",
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
-      },
-      "night-red": {
+      "night-ochre": {
         "role": "primary",
-        "displayName": "Night Final Red",
-        "canonical": "#e2392d",
+        "displayName": "Night Ochre",
+        "canonical": "#e0603c",
         "tonalRamp": [
-          "#430d09",
-          "#751710",
-          "#a62017",
-          "#d72a1e",
-          "#e65247",
-          "#ec8079",
-          "#f4b3ae",
-          "#fceae9"
+          "#4d271c",
+          "#7e3a27",
+          "#af4d31",
+          "#e0603c",
+          "#e8947d",
+          "#edbaac",
+          "#f2d8d1",
+          "#f4ebe8"
         ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
-      },
-      "night-red-deep": {
-        "role": "primary",
-        "displayName": "Night Pressed Red",
-        "canonical": "#c42b20",
-        "tonalRamp": [
-          "#420e0b",
-          "#721913",
-          "#a2241a",
-          "#d22e22",
-          "#e2554b",
-          "#ea837b",
-          "#f2b5b0",
-          "#fbeae9"
-        ],
-        "scheme": "dark (prefers-color-scheme), redefines the same custom property"
+        "cssVar": "--ochre"
       }
     },
     "typographyMeta": {
-      "masthead": {
-        "displayName": "Masthead",
-        "purpose": "The paper's name in red slab type; also the running-head name and crew-card issuer."
-      },
       "display": {
-        "displayName": "Display",
-        "purpose": "Front-page banner headline, fitted to one full-measure line above 1080px."
+        "displayName": "Painted Display",
+        "purpose": "The hero headline painted across the pyramid."
       },
       "headline": {
-        "displayName": "Headline",
-        "purpose": "Inside page heads; the same face sets WANTED, the slogan, the back-page close, drop caps and big numerals."
+        "displayName": "Carved Headline",
+        "purpose": "Section heads, the entrance line and the closing line."
       },
       "title": {
-        "displayName": "Title",
-        "purpose": "Rail heads, column subheads, ad heads."
+        "displayName": "Block Title",
+        "purpose": "Law titles, workshop head, card names and big figures."
       },
       "deck": {
         "displayName": "Deck",
-        "purpose": "Italic standfirst under each page head, captions, submast."
+        "purpose": "The line under each section head."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Reading copy and newspaper columns; 17px at 760px and below."
+        "purpose": "Reading copy."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Datelines, nav, table headers, fact terms; uppercase."
+        "purpose": "Buttons, course names, inscription kinds."
       },
-      "button": {
-        "displayName": "Button",
-        "purpose": "Uppercase plate text on buttons."
-      },
-      "wire": {
-        "displayName": "Wire",
-        "purpose": "Wire copy and data only: blotter, contract address, folios, bylines, rail readouts."
+      "data": {
+        "displayName": "Chain Data",
+        "purpose": "Addresses, hashes, amounts and labels over data."
       }
     },
     "shadows": [
       {
-        "name": "lift",
-        "value": "0 14px 30px -18px rgba(40, 36, 28, 0.55), 0 2px 5px -2px rgba(40, 36, 28, 0.35)",
-        "purpose": "The one soft offset shadow: live button, wanted poster, crew card.",
-        "dark": "0 14px 30px -18px rgba(0, 0, 0, 0.8), 0 2px 5px -2px rgba(0, 0, 0, 0.6)"
+        "name": "cast",
+        "value": "10px 16px 28px -14px rgba(52, 42, 26, 0.5), 2px 3px 6px -2px rgba(52, 42, 26, 0.3)",
+        "purpose": "The noon sun's shadow under courses, capstone stones, the curse tablet and the primary button."
       },
       {
-        "name": "page-edge",
-        "value": "0 -34px 50px -34px rgba(20, 18, 14, 0.55)",
-        "purpose": "Upward shadow of the inside-page stack as it turns over the front page; paired with an 18px crease gradient rgba(20, 18, 14, 0.14) to transparent."
-      }
-    ],
-    "materials": [
-      {
-        "name": "newsprint-grain",
-        "value": "radial-gradient(circle at 1px 1px, var(--ink) 0.55px, transparent 0.9px) / 5px 5px, opacity 0.07, position fixed",
-        "purpose": "Halftone grain over the whole sheet; fixed so scroll never repaints it."
-      },
-      {
-        "name": "halftone-photo",
-        "value": "canvas 45-degree dot screen from Robin's SVG; coarse cell 18px to fine 3.2px; line-art plate mix 0.16",
-        "purpose": "The only photo material; positive (light dots) in night final."
+        "name": "cast-dark",
+        "value": "10px 18px 32px -14px rgba(0, 0, 0, 0.75), 2px 3px 6px -2px rgba(0, 0, 0, 0.5)",
+        "purpose": "The found block card in the torchlight."
       }
     ],
     "motion": [
       {
-        "name": "ease-press",
+        "name": "ease-set",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "CSS transitions: button hover/press, coupon border, running head drop (0.45s)."
+        "purpose": "Every CSS transition; GSAP uses expo.out for entrances."
       },
       {
-        "name": "state-transition",
-        "value": "0.18s var(--ease-press)",
-        "purpose": "Button and coupon state changes."
-      },
-      {
-        "name": "head-slam",
-        "value": "rule --rule-draw 0 to 1 over 0.9s; headline from scale 1.16, blur 7px, opacity 0 over 0.85s; deck clip-path inset(0 0 100% 0) over 0.8s; expo.out; ScrollTrigger start top 78%",
-        "purpose": "Shared press run on every inside page head."
-      },
-      {
-        "name": "front-press-run",
-        "value": "EXTRA yPercent -110 (0.7s); banner lines scale 1.18 + blur 8px, stagger 0.12; lede, deal and rail clip-path rolled; expo.out",
-        "purpose": "First-viewport entrance on load."
-      },
-      {
-        "name": "page-turn",
-        "value": "pin front at bottom bottom for +=100%, pinSpacing false; .front__sheet scale 0.94, brightness 0.82, scrub",
-        "purpose": "Signature move: inside pages slide over the held front page."
-      },
-      {
-        "name": "section-moves",
-        "value": "take shares scaleX from 0 stagger 0.18; notice rules clip wipe stagger 0.07; wanted slapped on back.out(1.6); crew card y 46 rotate 2.5 to -1 then stamp scale 2.2 power4.in; vault rows x -14 stagger 0.045; blotter entries ScrollTrigger.batch scale 1.06 power4.out; back close slammed like a head",
-        "purpose": "One content-native move per section after the shared head slam."
-      },
-      {
-        "name": "fuse-burn",
-        "value": "--burn tween 1.4s power3.out; flame keyframes 0.42s steps(2) alternate",
-        "purpose": "Escrow progress toward the next heist."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce",
-        "purpose": "Skips every GSAP timeline, the pin and Lenis; halftone drawn at fine screen; fuse set directly; CSS durations 0.01ms."
+        "name": "walk-in",
+        "value": "ScrollTrigger pin, +=140%, scrub 0.6, scale 9 toward 50% 76%",
+        "purpose": "The entrance: the wall grows toward the doorway until the tomb's dark fills the screen."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide",
-        "value": "1081px",
-        "purpose": "Banner fitted to one line"
-      },
-      {
-        "name": "sheet",
-        "value": "1080px"
-      },
-      {
-        "name": "index",
-        "value": "900px",
-        "purpose": "Running-head index hidden"
-      },
-      {
         "name": "phone",
         "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "desktop-narrow",
+        "value": "1080px"
       }
     ]
   },
   "components": [
     {
-      "name": "Live Button",
+      "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The one live action (buy on Pons): red plate, inverts to ink when pressed.",
-      "html": "<button class=\"ds-btn\">Join on Pons <svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M204 64v104a12 12 0 0 1-24 0V93L72.49 200.49a12 12 0 0 1-17-17L163 76H88a12 12 0 0 1 0-24h104a12 12 0 0 1 12 12Z\"/></svg></button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border:2px solid var(--ink,#161514);background:var(--red,#c8241b);color:var(--red-ink,#fbf3ee);font:700 18px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border-radius:0;box-shadow:var(--lift,0 14px 30px -18px rgba(40,36,28,.55),0 2px 5px -2px rgba(40,36,28,.35));transition:background-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{background:var(--red-deep,#9e1a13);transform:translateY(-1px)}.ds-btn:active{background:var(--ink,#161514);color:var(--paper,#dedcd5);transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--red,#c8241b);outline-offset:3px}"
+      "description": "The one action: Buy on Pons.",
+      "html": "<a class=\"ds-btn\">Buy on Pons</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;height:54px;padding:0 24px;border:2px solid var(--ochre-deep,#7f2412);background:var(--ochre,#a3311b);color:var(--ochre-ink,#f4efe6);font:800 16px/1 'Schibsted Grotesk',sans-serif;letter-spacing:.04em;text-transform:uppercase;box-shadow:10px 16px 28px -14px rgba(52,42,26,.5);transition:transform .18s cubic-bezier(.16,1,.3,1),background-color .18s}.ds-btn:hover{background:var(--ochre-deep,#7f2412);transform:translateY(-1px)}.ds-btn:active{transform:translateY(1px);box-shadow:none}.ds-btn:focus-visible{outline:3px solid var(--ochre,#a3311b);outline-offset:3px}"
     },
     {
-      "name": "Ink Button",
+      "name": "Waiting Button",
       "kind": "button",
-      "refersTo": "button-ink",
-      "description": "Secondary plate in ink that turns red on hover.",
-      "html": "<button class=\"ds-btn-ink\">Check my card</button>",
-      "css": ".ds-btn-ink{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border:2px solid var(--ink,#161514);background:var(--ink,#161514);color:var(--paper,#dedcd5);font:700 18px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border-radius:0;box-shadow:var(--lift,0 14px 30px -18px rgba(40,36,28,.55),0 2px 5px -2px rgba(40,36,28,.35));transition:background-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}.ds-btn-ink:hover{background:var(--red,#c8241b);color:var(--red-ink,#fbf3ee);transform:translateY(-1px)}.ds-btn-ink:active{background:var(--ink,#161514);color:var(--paper,#dedcd5);transform:translateY(1px)}.ds-btn-ink:focus-visible{outline:3px solid var(--red,#c8241b);outline-offset:3px}"
+      "refersTo": "button-primary",
+      "description": "Before launch: Tomb opens soon.",
+      "html": "<span class=\"ds-btn-wait\">Tomb opens soon</span>",
+      "css": ".ds-btn-wait{display:inline-flex;align-items:center;height:54px;padding:0 24px;border:2px dashed currentColor;color:#1e1d1a;font:800 16px/1 'Schibsted Grotesk',sans-serif;letter-spacing:.04em;text-transform:uppercase;opacity:.8}"
     },
     {
-      "name": "CA Coupon",
-      "kind": "custom",
-      "refersTo": "coupon",
-      "description": "Dashed cut-out holding the contract address in wire type; click to copy.",
-      "html": "<button class=\"ds-coupon\"><span class=\"ds-coupon__k\">CA</span><span class=\"ds-coupon__v\">0x9d2f4c81b7e3a6150c8f2e4d6...</span></button>",
-      "css": ".ds-coupon{display:inline-flex;align-items:center;gap:10px;max-width:100%;height:54px;padding:0 14px;border:2px dashed var(--ink,#161514);background:var(--paper-lift,#e9e7e1);color:var(--ink,#161514);font:600 16px/1 'Archivo Narrow','Arial Narrow',sans-serif;cursor:pointer;transition:border-color .18s cubic-bezier(.16,1,.3,1)}.ds-coupon:hover{border-color:var(--red,#c8241b)}.ds-coupon:active{background:var(--ink,#161514);color:var(--paper,#dedcd5)}.ds-coupon:focus-visible{outline:3px solid var(--red,#c8241b);outline-offset:3px}.ds-coupon__k{padding:4px 8px;background:var(--ink,#161514);color:var(--paper,#dedcd5);font-weight:700;font-size:13px;letter-spacing:.08em}.ds-coupon:active .ds-coupon__k{background:var(--paper,#dedcd5);color:var(--ink,#161514)}.ds-coupon__v{min-width:0;font-family:'Courier Prime','Courier New',monospace;font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}"
+      "name": "CA Tablet",
+      "kind": "chip",
+      "refersTo": "ca-tablet",
+      "description": "The contract address; tap to copy.",
+      "html": "<button class=\"ds-ca\"><span class=\"ds-ca-k\">CA</span><span class=\"ds-ca-v\">0x9d2f…0a2b</span></button>",
+      "css": ".ds-ca{display:inline-flex;align-items:stretch;height:54px;padding:0;border:2px solid rgba(30,29,26,.4);background:transparent;color:#1e1d1a;cursor:pointer}.ds-ca:hover{border-color:#e4643f}.ds-ca-k{display:grid;place-items:center;padding:0 12px;background:#d4a62c;color:#1e1d1a;font:600 13px/1 'Red Hat Mono',monospace}.ds-ca-v{display:grid;align-items:center;padding:0 14px;font:400 14px/1 'Red Hat Mono',monospace}"
     },
     {
-      "name": "Wallet Lookup",
+      "name": "Wallet Field",
       "kind": "input",
       "refersTo": "input-lookup",
-      "description": "Square ink-bordered field joined flush to its button.",
-      "html": "<div class=\"ds-lookup\"><label for=\"ds-w\">Your wallet</label><div class=\"ds-lookup__f\"><input id=\"ds-w\" placeholder=\"0x...\"><button>Look up</button></div></div>",
-      "css": ".ds-lookup label{display:block;margin-bottom:8px;font:700 14px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink,#161514)}.ds-lookup__f{display:flex}.ds-lookup__f input{flex:1;min-width:0;height:54px;padding:0 16px;border:2px solid var(--ink,#161514);border-right:0;border-radius:0;background:var(--paper-lift,#e9e7e1);color:var(--ink,#161514);font:500 17px/1 'Archivo Narrow','Arial Narrow',sans-serif;font-variant-numeric:tabular-nums;caret-color:var(--red,#c8241b)}.ds-lookup__f input::placeholder{color:var(--ink-faint,#5d5a54)}.ds-lookup__f input:focus-visible{outline:3px solid var(--red,#c8241b);outline-offset:0}.ds-lookup__f button{height:54px;padding:0 26px;border:2px solid var(--ink,#161514);background:var(--red,#c8241b);color:var(--red-ink,#fbf3ee);font:700 18px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.ds-lookup__f button:hover{background:var(--red-deep,#9e1a13)}.ds-lookup__f button:active{background:var(--ink,#161514);color:var(--paper,#dedcd5)}"
+      "description": "Find your block: paste a wallet.",
+      "html": "<div class=\"ds-field\"><input class=\"ds-input\" placeholder=\"0x…\"><button class=\"ds-check\">Check</button></div>",
+      "css": ".ds-field{display:flex;background:#201b16;padding:16px}.ds-input{flex:1;height:54px;padding:0 16px;border:2px solid #a3967f;border-right:0;background:#15120f;color:#e9deca;font:400 15px/1 'Red Hat Mono',monospace}.ds-input:focus-visible{outline:3px solid #e8a948}.ds-check{height:54px;padding:0 22px;border:2px solid #e9deca;background:#e9deca;color:#15120f;font:800 16px/1 'Schibsted Grotesk',sans-serif;text-transform:uppercase}.ds-check:hover{background:#e4643f;border-color:#e4643f}"
     },
     {
-      "name": "Running Head",
+      "name": "Lintel",
       "kind": "nav",
-      "refersTo": "running-head",
-      "description": "Fixed bar that drops in once the masthead scrolls away; red slab name, label index, live button.",
-      "html": "<nav class=\"ds-runhead\"><a class=\"ds-runhead__name\" href=\"#\">The Robin Heist Gazette</a><span class=\"ds-runhead__index\"><a href=\"#\">The heist</a><a href=\"#\">Rules</a><a href=\"#\">The vault</a><a href=\"#\">Blotter</a></span></nav>",
-      "css": ".ds-runhead{display:flex;align-items:center;gap:24px;height:58px;padding:0 24px;background:var(--paper,#dedcd5);border-bottom:5px double var(--ink,#161514)}.ds-runhead__name{font:400 20px/1 'Alfa Slab One',Rockwell,serif;color:var(--red,#c8241b);text-decoration:none;white-space:nowrap}.ds-runhead__index{flex:1;display:flex;justify-content:center;gap:26px}.ds-runhead__index a{font:600 15px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink,#161514)}.ds-runhead__index a:hover,.ds-runhead__index a:focus-visible{text-decoration:underline;text-decoration-color:var(--red,#c8241b);text-underline-offset:.2em;outline:none}"
+      "refersTo": "lintel",
+      "description": "The fixed soot beam with the ochre line.",
+      "html": "<nav class=\"ds-lintel\"><b>The Sealed Tomb</b><a>The rite</a><a>The pyramid</a><a>Laws</a></nav>",
+      "css": ".ds-lintel{display:flex;align-items:center;gap:24px;height:60px;padding:0 24px;background:#15120f;color:#e9deca;border-bottom:3px solid #a3311b}.ds-lintel b{font:400 17px/1 'Dela Gothic One',sans-serif;text-transform:uppercase}.ds-lintel a{color:#c4b8a3;font:600 14px/1 'Schibsted Grotesk',sans-serif}.ds-lintel a:hover{color:#e9deca;text-decoration:underline;text-decoration-color:#e4643f}"
     },
     {
-      "name": "EXTRA Bar",
-      "kind": "custom",
-      "refersTo": "extra-bar",
-      "description": "Full-width red banner over the front headline naming the next heist step.",
-      "html": "<p class=\"ds-extra\"><span>Extra</span><span>The split</span><span>Extra</span></p>",
-      "css": ".ds-extra{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:0;padding:7px 16px 5px;background:var(--red,#c8241b);color:var(--red-ink,#fbf3ee);font:400 30px/1 'League Gothic','Arial Narrow',sans-serif;letter-spacing:.1em;text-transform:uppercase}"
-    },
-    {
-      "name": "Crew Card",
+      "name": "Capstone Stone",
       "kind": "card",
-      "refersTo": "crew-card",
-      "description": "The press pass returned by a wallet lookup; the only rounded object, tilted and stamped.",
-      "html": "<div class=\"ds-card\"><div class=\"ds-card__top\"><span class=\"ds-card__org\">Robin Heist</span><span class=\"ds-card__kind\">Crew card</span></div><div class=\"ds-card__who\">0x9d2f...e4d6</div><dl class=\"ds-card__facts\"><div><dt>Bag</dt><dd>412,000</dd></div><div><dt>Rank</dt><dd>#4</dd></div></dl><span class=\"ds-card__stamp\">In</span></div>",
-      "css": ".ds-card{position:relative;max-width:520px;padding:20px 22px 18px;border:2px solid var(--ink,#161514);border-radius:10px;background:var(--paper-lift,#e9e7e1);color:var(--ink,#161514);box-shadow:var(--lift,0 14px 30px -18px rgba(40,36,28,.55),0 2px 5px -2px rgba(40,36,28,.35));rotate:-1deg}.ds-card__top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:5px double var(--ink,#161514)}.ds-card__org{font:400 16px/1.1 'Alfa Slab One',Rockwell,serif;color:var(--red,#c8241b)}.ds-card__kind{font:700 13px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.12em;text-transform:uppercase}.ds-card__who{margin-top:16px;font:400 38px/1 'League Gothic','Arial Narrow',sans-serif}.ds-card__facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin:12px 0 0}.ds-card__facts dt{font:600 12px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint,#5d5a54)}.ds-card__facts dd{margin:4px 0 0;font:700 21px/1.1 'Archivo Narrow','Arial Narrow',sans-serif;font-variant-numeric:tabular-nums}.ds-card__stamp{position:absolute;top:56px;right:18px;padding:4px 14px 2px;border:4px solid currentColor;font:400 44px/1 'League Gothic','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.04em;rotate:-12deg;opacity:.88;color:var(--ink,#161514)}"
+      "refersTo": "capstone-stone",
+      "description": "One of the ten biggest blocks; opens that wallet's block.",
+      "html": "<button class=\"ds-stone\"><span class=\"ds-r\">1</span><span class=\"ds-n\">Stone-Hand Seti</span><span class=\"ds-b\">9.4M</span></button>",
+      "css": ".ds-stone{display:grid;gap:6px;justify-items:center;width:190px;aspect-ratio:1/.86;padding:10px;border:1px solid #8f6a10;background:#e7c35e;color:#1e1d1a;box-shadow:10px 16px 28px -14px rgba(52,42,26,.5);transition:transform .2s cubic-bezier(.16,1,.3,1)}.ds-stone:hover{transform:translateY(-3px)}.ds-r{justify-self:start;font:600 13px/1 'Red Hat Mono',monospace}.ds-n{align-self:end;font:800 14px/1.2 'Schibsted Grotesk',sans-serif}.ds-b{font:400 13px/1 'Red Hat Mono',monospace}"
     },
     {
-      "name": "Wanted Poster",
-      "kind": "card",
-      "refersTo": "wanted-poster",
-      "description": "Sticky poster counting snitches in red; square, tilted 2deg, lifted.",
-      "html": "<aside class=\"ds-wanted\"><p class=\"ds-wanted__w\">Wanted</p><p class=\"ds-wanted__n\">41</p><p class=\"ds-wanted__r\">Reward: nothing. Ever.</p></aside>",
-      "css": ".ds-wanted{max-width:320px;padding:30px 26px 28px;border:2px solid var(--ink,#161514);background:var(--paper-lift,#e9e7e1);color:var(--ink,#161514);box-shadow:var(--lift,0 14px 30px -18px rgba(40,36,28,.55),0 2px 5px -2px rgba(40,36,28,.35));text-align:center;rotate:2deg}.ds-wanted p{margin:0}.ds-wanted__w{font:400 84px/.84 'League Gothic','Arial Narrow',sans-serif;letter-spacing:.04em;text-transform:uppercase}.ds-wanted__n{margin-top:6px;font:400 150px/.8 'League Gothic','Arial Narrow',sans-serif;color:var(--red,#c8241b);font-variant-numeric:tabular-nums}.ds-wanted__r{margin-top:18px;padding-top:14px;border-top:5px double var(--ink,#161514);font:400 40px/1 'League Gothic','Arial Narrow',sans-serif;text-transform:uppercase}"
-    },
-    {
-      "name": "Stock Quotations",
+      "name": "Cartouche",
       "kind": "custom",
-      "refersTo": "quotes",
-      "description": "Leaderboard set as market quotations: heavy top and bottom rules, column hairlines, dotted rows.",
-      "html": "<table class=\"ds-quotes\"><thead><tr><th>#</th><th>Wallet</th><th class=\"n\">Bag</th></tr></thead><tbody><tr class=\"top\"><td>1</td><td>0x41a0...92bc</td><td class=\"n\">1,920,400</td></tr><tr><td>2</td><td>0x7e11...03fa</td><td class=\"n\">884,000</td></tr></tbody></table>",
-      "css": ".ds-quotes{width:100%;border-collapse:collapse;border-bottom:4px solid var(--ink,#161514);font-family:'Archivo Narrow','Arial Narrow',sans-serif;color:var(--ink,#161514)}.ds-quotes th+th,.ds-quotes td+td{border-left:1px solid var(--ink,#161514)}.ds-quotes th{padding:8px 10px;border-top:4px solid var(--ink,#161514);border-bottom:2px solid var(--ink,#161514);font:700 13px/1 'Archivo Narrow','Arial Narrow',sans-serif;letter-spacing:.1em;text-transform:uppercase;text-align:left}.ds-quotes td{padding:5px 10px;border-bottom:1px dotted var(--rule-soft,rgba(22,21,20,.28));font-size:16px;font-weight:500;line-height:1.35;font-variant-numeric:tabular-nums}.ds-quotes .n{text-align:right}.ds-quotes tr.top td{font-weight:700}.ds-quotes tbody tr:hover{background:var(--paper-deep,#cfccc3)}"
-    },
-    {
-      "name": "Blotter Entry",
-      "kind": "custom",
-      "refersTo": "blotter-entry",
-      "description": "Police-ledger line for a sell, set in wire type.",
-      "html": "<div class=\"ds-entry\"><div class=\"ds-entry__m\"><span>Block 82,931,447</span><span>14:02</span></div><p class=\"ds-entry__w\"><strong>0x7e11...03fa</strong> sold on the curve. Out of the crew.</p></div>",
-      "css": ".ds-entry{padding:14px 0 16px;border-top:1px solid var(--ink,#161514);color:var(--ink,#161514)}.ds-entry__m{display:flex;gap:16px;font:400 13px/1 'Courier Prime','Courier New',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint,#5d5a54)}.ds-entry__w{margin:8px 0 0;font:400 16px/1.5 'Courier Prime','Courier New',monospace}.ds-entry__w strong{font-weight:700;text-transform:uppercase}"
+      "refersTo": "block-card",
+      "description": "A holder's name on the block card, tied off like a pharaoh's.",
+      "html": "<span class=\"ds-cart\">Stone-Hand Seti</span>",
+      "css": ".ds-cart{position:relative;display:inline-flex;padding:6px 30px 6px 18px;border:2.5px solid #1e1d1a;border-radius:999px;background:#d8cfbd;color:#1e1d1a;font:400 21px/1.15 'Dela Gothic One',sans-serif}.ds-cart::after{content:'';position:absolute;top:18%;right:12px;width:3px;height:64%;background:#1e1d1a}"
     }
   ],
   "narrative": {
-    "northStar": "The Late Edition",
-    "overview": "The site is one sheet of cheap 1930s crime tabloid that keeps going to press. The engine's state is the news: the front page headline is set from live data, the heist schedule is a column of copy, the leaderboard is the stock quotations, the sell log is the police blotter, and the back page is the classifieds. Everything is ink on gray newsprint with one red, cut in wood type and laid out on a column grid with drawn rules. No surface pretends to be an app.\n\nDensity is a newspaper's: tight leading on headlines, generous body measure, rules doing the work that cards and boxes do elsewhere. Material is printed: a fixed halftone grain over the whole sheet, photographs printed as halftone screens computed from the mascot's own art, double rules under the masthead and above every page. Motion is a press run: rules are drawn, headlines slam onto the sheet out of a blur, decks are printed down by a roller, and the front page is turned over by the pages beneath it. The late edition (dark scheme) is the same paper printed in light ink on black stock.",
+    "northStar": "The Pharaoh's Building Site",
+    "overview": "The site is the Pharaoh's pyramid while it is still going up: limestone courses under a flat noon sky, red-ochre masons' marks for headlines and the one action, an electrum capstone for the ten biggest blocks. Inside the entrance the same stone is lit by torches. The mechanism is drawn: holders are blocks, rank is height, the top ten sit in the capstone, the escrow is a block hauled up the ramp, a seller is cursed out of the stone.",
     "keyCharacteristics": [
-      "Cold gray newsprint ground with stepped paper tones; ink, never pure black.",
-      "One red, used for the masthead, the EXTRA bar, snitch counts, the one live action and the fuse flame.",
-      "Five self-hosted faces with strict jobs: slab masthead, condensed wood-type headlines, serif reading copy, narrow sans labels, typewriter wire copy.",
-      "Square newspaper geometry; the crew card is the only rounded object.",
-      "Halftone as the photo material; one soft shadow for paper lying on paper.",
-      "Press-run motion with a pinned front page that the next pages slide over."
+      "Limestone courses as the ground outside; flat sky behind the monuments.",
+      "Red ochre for painted headlines, the primary action and the curse.",
+      "Electrum only for the capstone and the ten blocks in it.",
+      "One theme switch, at the entrance walk-in.",
+      "Square stone geometry; only the sun, the cartouche and the stela are round."
     ],
     "rules": [
       {
-        "name": "The One Red Rule",
-        "body": "Red is the only hue on the sheet. It marks the paper's identity (masthead, EXTRA), the danger (snitches) and the one action worth taking (the live buy). A second accent breaks the newspaper.",
+        "name": "The Electrum Rule",
+        "body": "Gold means in the capstone; nothing else is gold.",
         "section": "colors"
       },
       {
-        "name": "The Ink Not Black Rule",
-        "body": "Ink is warm carbon (`ink`), never `#000`; paper is gray stock, never `#fff`.",
+        "name": "The One Switch Rule",
+        "body": "Day outside, torchlight inside, joined only by the walk-in.",
         "section": "colors"
       },
       {
-        "name": "The Job Per Face Rule",
-        "body": "Each face has one job. League Gothic never sets body copy; PT Serif never sets labels; Courier Prime is for wire copy and data only, never headings or prose.",
+        "name": "The Mono Is Chain Rule",
+        "body": "Red Hat Mono sets addresses, hashes and amounts, never prose.",
         "section": "typography"
       },
       {
-        "name": "The Tabular Figures Rule",
-        "body": "Every live number uses tabular figures so counts and prices do not jitter as they update.",
-        "section": "typography"
-      },
-      {
-        "name": "The Rules Do The Boxing Rule",
-        "body": "Structure comes from printed rules (hairline, 2px, 4px, and 5 to 6px double), not from cards, fills or gaps.",
-        "section": "layout"
-      },
-      {
-        "name": "The One Lift Rule",
-        "body": "There is one soft shadow. Hard offset shadows, glows and stacked elevations do not belong to newsprint.",
+        "name": "The Noon Sun Rule",
+        "body": "Light from the upper left; shadows fall down and to the right.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep red to its jobs: masthead, EXTRA, snitch counts and slogan, the one live action, the fuse flame, the out stamp, focus and selection.",
-      "Do separate content with printed rules (hairline, 2px, 4px, double) before reaching for boxes or fills.",
-      "Do give each face its one job: League Gothic for heads and big numerals, PT Serif for reading, Archivo Narrow for labels, tables and buttons, Courier Prime for wire copy and data.",
-      "Do print images as halftone from the real mascot art, at a fine screen at rest.",
-      "Do invert to ink on paper for pressed states on buttons and the coupon.",
-      "Do open every new inside page with the drawn double rule, folio, slammed headline and rolled deck, then one move native to its content.",
-      "Do define every color as a token and redefine it for night final; nothing hard-codes a light-only value.",
-      "Do collapse all motion to the finished static sheet under reduced motion."
+      "Do keep gold to the capstone, its ten stones, the tribute course and the CA tag.",
+      "Do paint headlines on stone in ochre, multiplied in daylight, plain at night.",
+      "Do put longer text on the masonry on a lit limestone plaque.",
+      "Do collapse all motion to the finished stone under reduced motion."
     ],
     "donts": [
-      "Don't add a second accent hue, gradients or tinted panels.",
-      "Don't round corners on anything but the crew card at 10px.",
-      "Don't use any shadow other than the lift and the page-turn edge; no hard offset shadows, glows or blur panels.",
-      "Don't set prose or headings in Courier Prime, or body copy in League Gothic.",
-      "Don't use stock photos or full-color art on the sheet; Robin's palette only reaches the page through halftone or grayscale.",
-      "Don't use pure `#000` ink or pure `#fff` paper."
+      "Don't call the tribute a dividend, and don't let the pyramid read as recruitment.",
+      "Don't add a second accent hue, decorative gradients, glows or neon.",
+      "Don't round blocks, buttons, fields or cards.",
+      "Don't invert any section except at the entrance."
     ]
   }
 }

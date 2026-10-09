@@ -1,321 +1,272 @@
 ---
-name: The Robin Heist Gazette
-description: "$RBANK set as a 1930s crime tabloid: one sheet of cold newsprint in wood type, ink and one red, where every heist is the front-page story."
+name: The Sealed Tomb
+description: "$TOMB as the Pharaoh's pyramid going up on a sunlit plateau: limestone courses, red-ochre masons' marks, an electrum capstone for the ten biggest blocks, and a torchlit tomb inside."
 colors:
-  paper: "#dedcd5"
-  paper-deep: "#cfccc3"
-  paper-shade: "#bdb9ae"
-  paper-lift: "#e9e7e1"
-  ink: "#161514"
-  ink-soft: "#3d3b37"
-  ink-faint: "#5d5a54"
-  rule-soft: "rgba(22, 21, 20, 0.28)"
-  red: "#c8241b"
-  red-deep: "#9e1a13"
-  red-ink: "#fbf3ee"
-  night-paper: "#171614"
-  night-paper-deep: "#201f1c"
-  night-paper-shade: "#2c2a26"
-  night-paper-lift: "#23221f"
-  night-ink: "#e6e3da"
-  night-ink-soft: "#c2beb3"
-  night-ink-faint: "#a29e93"
-  night-rule-soft: "rgba(230, 227, 218, 0.3)"
-  night-red: "#e2392d"
-  night-red-deep: "#c42b20"
+  sky: "#d5d9d8"
+  sky-deep: "#c3c8c6"
+  sun: "#ece7da"
+  stone: "#cbc1ad"
+  stone-hi: "#d8cfbd"
+  stone-lo: "#b4a890"
+  stone-shade: "#a29681"
+  joint: "#8a7f6b"
+  haze: "#e8e4da"
+  sand: "#d5bd93"
+  sand-far: "#cbb48c"
+  casing: "#dcd2be"
+  casing-shade: "#bcb09a"
+  far: "#c8beab"
+  mud: "#8e6c4c"
+  mud-lo: "#6b4f37"
+  soot: "#1e1d1a"
+  soot-soft: "#3f3b34"
+  soot-faint: "#57514a"
+  ochre: "#a3311b"
+  ochre-deep: "#7f2412"
+  ochre-ink: "#f4efe6"
+  gold: "#d4a62c"
+  gold-hi: "#e7c35e"
+  gold-deep: "#8f6a10"
+  tomb: "#15120f"
+  tomb-wall: "#201b16"
+  tomb-lift: "#2a241d"
+  dust: "#e9deca"
+  dust-soft: "#c4b8a3"
+  dust-faint: "#a3967f"
+  torch: "#e8a948"
+  ochre-lit: "#e4643f"
+  night-sky: "#11151a"
+  night-stone: "#3b362e"
+  night-stone-hi: "#48423a"
+  night-soot: "#ece4d4"
+  night-ochre: "#e0603c"
 typography:
-  masthead:
-    fontFamily: "Alfa Slab One, Rockwell, serif"
-    fontSize: "clamp(25px, 6.55vw, 94px)"
-    fontWeight: 400
-    lineHeight: 1.1
   display:
-    fontFamily: "League Gothic, Arial Narrow, sans-serif"
-    fontSize: "clamp(62px, 10.6vw, 152px)"
-    fontWeight: 400
-    lineHeight: 0.88
-    letterSpacing: "0.005em"
-  headline:
-    fontFamily: "League Gothic, Arial Narrow, sans-serif"
-    fontSize: "clamp(52px, 7.2vw, 110px)"
-    fontWeight: 400
-    lineHeight: 0.9
-    letterSpacing: "0.005em"
-  title:
-    fontFamily: "League Gothic, Arial Narrow, sans-serif"
-    fontSize: "34px"
+    fontFamily: "Dela Gothic One, Arial Black, sans-serif"
+    fontSize: "5.3cqw"
     fontWeight: 400
     lineHeight: 1
+    letterSpacing: "-0.01em"
+  headline:
+    fontFamily: "Dela Gothic One, Arial Black, sans-serif"
+    fontSize: "clamp(32px, 8.6vw, 100px)"
+    fontWeight: 400
+    lineHeight: 0.95
+    letterSpacing: "-0.01em"
+  title:
+    fontFamily: "Dela Gothic One, Arial Black, sans-serif"
+    fontSize: "21px"
+    fontWeight: 400
+    lineHeight: 1.15
   deck:
-    fontFamily: "PT Serif, Georgia, serif"
-    fontSize: "clamp(18px, 1.5vw, 21px)"
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(17px, 1.4vw, 20px)"
     fontWeight: 400
     lineHeight: 1.5
   body:
-    fontFamily: "PT Serif, Georgia, serif"
-    fontSize: "18px"
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.55
   label:
-    fontFamily: "Archivo Narrow, Arial Narrow, sans-serif"
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
     fontSize: "14px"
+    fontWeight: 800
+    lineHeight: 1.2
+    letterSpacing: "0.04em"
+  data:
+    fontFamily: "Red Hat Mono, ui-monospace, Menlo, monospace"
+    fontSize: "13px"
     fontWeight: 600
-    lineHeight: 1
-    letterSpacing: "0.08em"
-  button:
-    fontFamily: "Archivo Narrow, Arial Narrow, sans-serif"
-    fontSize: "18px"
-    fontWeight: 700
-    lineHeight: 1
+    lineHeight: 1.3
     letterSpacing: "0.06em"
-  wire:
-    fontFamily: "Courier Prime, Courier New, monospace"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: 1.35
 rounded:
   none: "0px"
-  card: "10px"
+  cartouche: "999px"
 spacing:
-  gutter: "clamp(16px, 3.4vw, 44px)"
-  col-gap: "clamp(18px, 2.2vw, 30px)"
-  max: "1360px"
-  page-top: "clamp(40px, 6vh, 72px)"
+  gutter: "clamp(16px, 3.4vw, 48px)"
+  max: "1320px"
+  head: "60px"
+  section: "clamp(88px, 11vw, 160px)"
 components:
   button-primary:
-    backgroundColor: "{colors.red}"
-    textColor: "{colors.red-ink}"
-    typography: "{typography.button}"
+    backgroundColor: "{colors.ochre}"
+    textColor: "{colors.ochre-ink}"
+    typography: "{typography.label}"
     rounded: "{rounded.none}"
-    padding: "0 26px"
+    padding: "0 24px"
     height: "54px"
   button-primary-hover:
-    backgroundColor: "{colors.red-deep}"
-    textColor: "{colors.red-ink}"
-  button-primary-active:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
+    backgroundColor: "{colors.ochre-deep}"
+    textColor: "{colors.ochre-ink}"
   button-ink:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    typography: "{typography.button}"
+    backgroundColor: "{colors.soot}"
+    textColor: "{colors.stone}"
+    typography: "{typography.label}"
     rounded: "{rounded.none}"
-    padding: "0 26px"
+    padding: "0 24px"
     height: "54px"
-  button-ink-hover:
-    backgroundColor: "{colors.red}"
-    textColor: "{colors.red-ink}"
+  button-ink-inside:
+    backgroundColor: "{colors.dust}"
+    textColor: "{colors.tomb}"
   button-small:
     padding: "0 16px"
     height: "40px"
-  coupon:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.ink}"
+  ca-tablet:
+    textColor: "{colors.dust}"
+    typography: "{typography.data}"
     rounded: "{rounded.none}"
-    padding: "0 14px"
     height: "54px"
-  coupon-active:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
   input-lookup:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.tomb}"
+    textColor: "{colors.dust}"
+    typography: "{typography.data}"
     rounded: "{rounded.none}"
-    padding: "0 16px"
     height: "54px"
-  extra-bar:
-    backgroundColor: "{colors.red}"
-    textColor: "{colors.red-ink}"
-    padding: "7px 16px 5px"
-  crew-card:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.card}"
-    padding: "20px 22px 18px"
-    width: "520px"
-  wanted-poster:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.ink}"
+  capstone-stone:
+    backgroundColor: "{colors.gold-hi}"
+    textColor: "{colors.soot}"
     rounded: "{rounded.none}"
-    padding: "30px 26px 28px"
-  classified-ad:
-    backgroundColor: "{colors.paper-lift}"
-    textColor: "{colors.ink}"
+  block-card:
+    backgroundColor: "{colors.stone-hi}"
+    textColor: "{colors.soot}"
     rounded: "{rounded.none}"
-    padding: "18px 20px"
-  classified-ad-notice:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-  running-head:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    height: "58px"
+  lintel:
+    backgroundColor: "{colors.tomb}"
+    textColor: "{colors.dust}"
+    height: "60px"
 ---
 
-# Design System: The Robin Heist Gazette
+# Design System: The Sealed Tomb
 
 ## Overview
 
-**Creative North Star: "The Late Edition"**
+**Creative North Star: "The Pharaoh's Building Site"**
 
-The site is one sheet of cheap 1930s crime tabloid that keeps going to press. The engine's state is the news: the front page headline is set from live data, the heist schedule is a column of copy, the leaderboard is the stock quotations, the sell log is the police blotter, and the back page is the classifieds. Everything is ink on gray newsprint with one red, cut in wood type and laid out on a column grid with drawn rules. No surface pretends to be an app.
+The site is the Pharaoh's pyramid while it is still going up. Outside, under a flat noon sky, every surface is limestone laid in courses with mortar joints; the masons' red-ochre marks set the headlines and the one action; the electrum capstone holds the ten biggest blocks. Inside, the same stone is lit by torches: dark sandstone, dust-coloured type, a warm light falling from the upper left. The two worlds meet once, at the entrance: the visitor walks up to the doorway and the daylight drains away.
 
-Density is a newspaper's: tight leading on headlines, generous body measure, rules doing the work that cards and boxes do elsewhere. Material is printed: a fixed halftone grain over the whole sheet, photographs printed as halftone screens computed from the mascot's own art, double rules under the masthead and above every page. Motion is a press run: rules are drawn, headlines slam onto the sheet out of a blur, decks are printed down by a roller, and the front page is turned over by the pages beneath it. The late edition (dark scheme) is the same paper printed in light ink on black stock.
+The mechanism is drawn, not described: holders are blocks, rank is height in the pyramid, the top ten sit in the gold capstone, the escrow is a block hauled up the ramp, a seller is a block pulled out and cursed. Every number comes from the engine; demo numbers are labelled.
 
 **Key Characteristics:**
-- Cold gray newsprint ground with stepped paper tones; ink, never pure black.
-- One red, used for the masthead, the EXTRA bar, snitch counts, the one live action and the fuse flame.
-- Five self-hosted faces with strict jobs: slab masthead, condensed wood-type headlines, serif reading copy, narrow sans labels, typewriter wire copy.
-- Square newspaper geometry; the crew card is the only rounded object.
-- Halftone as the photo material; one soft shadow for paper lying on paper.
-- Press-run motion with a pinned front page that the next pages slide over.
+- Limestone courses as the ground of the outside sections; flat sky behind the monuments.
+- Red ochre for the masons' marks: headlines painted on stone, the primary action, the curse.
+- Electrum gold reserved for the capstone and the ten blocks in it (and the CA tag).
+- One theme switch, earned: day outside, torchlight inside, joined by the entrance walk.
+- Square stone geometry; only the sun, the cartouche and the stela's top are round.
+- Motion is construction: courses set from the ground up, stones lowered into the capstone, headlines painted stroke by stroke, the walk inside, the doors sliding shut.
 
 ## Colors
 
-Three inks on gray stock: newsprint, carbon ink and a single tabloid red, with a full night-final inversion under `prefers-color-scheme: dark`.
+Four inks on stone: limestone, red ochre, soot and electrum, with a torchlit interior family and a moonlit night scheme.
 
 ### Primary
-- **Tabloid Red** (`red`): the paper's one spot color. It prints the masthead and running-head name, the full-width EXTRA bar, the snitch count on the front rail, the WANTED numeral and the pull quote slogan, the live buy button, the fuse flame, the crew-card stamp when a wallet is out, plus the system's focus ring, text selection, caret and link-hover underline. **Pressed Red** (`red-deep`) is its hover and error-text step. **Red Paper** (`red-ink`) is the off-white type that sits on red.
+- **Red Ochre** (`ochre`): the masons' paint. Hero headline (multiplied onto the stone), the "next" mark on the rite, the curse tablet, the sell warning, the closing line, the primary button, focus rings, selection and caret. **Pressed Ochre** (`ochre-deep`) is its hover. **Linen** (`ochre-ink`) is the type on ochre. Inside the tomb the same role is played by **Lit Ochre** (`ochre-lit`).
+
+### Secondary
+- **Electrum** (`gold`, `gold-hi`, `gold-deep`): the capstone in the hero, the ten capstone stones, the tribute course and share, the CA tag, the connected-wallet dot. Nothing else is gold.
 
 ### Neutral
-- **Newsprint** (`paper`): the ground of every page and the running head.
-- **Back Stock** (`paper-deep`): recessed fills, such as the keeper share of the take bar, the mugshot frame, table-row hover, the scrollbar track.
-- **Shade Stock** (`paper-shade`): the deepest paper step, reserved for shaded paper.
-- **Fresh Sheet** (`paper-lift`): anything pasted onto the page, such as the notice sheet, wanted poster, crew card, classified ads, coupon, input field and photo mounts.
-- **Carbon Ink** (`ink`): type, rules (the `--rule` alias is the same ink), the inverted buttons, the feeding share of the take bar, the classified NOTICE ad.
-- **Worn Ink** (`ink-soft`): decks, captions and secondary copy.
-- **Faded Ink** (`ink-faint`): metadata, placeholders, blotter meta lines, disabled and waiting states.
-- **Ghost Rule** (`rule-soft`): dotted and dashed hairlines between table rows, rule items and column rules.
+- **Limestone** (`stone`, `stone-hi`, `stone-lo`, `stone-shade`): the four tones blocks are cut in. Lit west face uses `stone-hi`/`stone`, the shaded east face `stone-lo`/`stone-shade`. `stone-hi` is also the plaque behind text set on the pyramid and the found block card.
+- **Mortar** (`joint`): every joint line, block border and ramp edge.
+- **Noon Sky** (`sky`, `sky-deep`, fading to `haze` at the horizon) and **Sun** (`sun`): the field behind the hero pyramid and the leaderboard pyramid.
+- **The plateau** (`sand`, `sand-far`, `far`, `casing`, `casing-shade`, `mud`, `mud-lo`): ground, dunes, far pyramids, the surviving casing and the mudbrick ramp. Illustration only.
+- **Soot** (`soot`, `soot-soft`, `soot-faint`): type and black marks outside. `soot-faint` is never used on `stone-lo`.
+- **The Tomb** (`tomb`, `tomb-wall`, `tomb-lift`) with **Dust** type (`dust`, `dust-soft`, `dust-faint`) and **Torch** (`torch`): everything inside the entrance, the lintel and the hero doorway.
 
-### Night Final
-The dark scheme redefines the same custom properties: black stock (`night-paper` with its deep, shade and lift steps), light ink (`night-ink`, `night-ink-soft`, `night-ink-faint`), and a brighter red (`night-red`, `night-red-deep`) so the spot color holds on black. The red-ink type stays the same. The shadow darkens to pure black. The halftone screen prints positive in night final, so dots carry the image's light instead of its dark.
-
-### Illustration Only
-The `--rb-*` family (slate fur, navy coat, brass, coin gold, sack tan, tie red, hat navy) colors Robin's SVG and nothing else. On the page it never prints in color: the halftone renders it in ink and the mugshot runs it through grayscale.
+### Night
+Under `prefers-color-scheme: dark` the plateau is moonlit: `night-sky`, darker limestone (`night-stone`, `night-stone-hi`), light soot (`night-soot`) and a brighter ochre (`night-ochre`). Multiply blending turns off at night so ochre paint stays legible on dark stone. The interior family does not change.
 
 ### Named Rules
-**The One Red Rule.** Red is the only hue on the sheet. It marks the paper's identity (masthead, EXTRA), the danger (snitches) and the one action worth taking (the live buy). A second accent breaks the newspaper.
-
-**The Ink Not Black Rule.** Ink is warm carbon (`ink`), never `#000`; paper is gray stock, never `#fff`.
+**The Electrum Rule.** Gold means "in the capstone". Using it for decoration anywhere else breaks the one thing the colour has to say.
+**The One Switch Rule.** The page changes theme exactly once, at the entrance, through the walk-in. No other section inverts.
 
 ## Typography
 
-**Masthead Font:** Alfa Slab One (with Rockwell, serif)
-**Headline Font:** League Gothic (with Arial Narrow, sans-serif)
-**Body Font:** PT Serif (with Georgia, serif), regular, italic and bold
-**Label Font:** Archivo Narrow (with Arial Narrow, sans-serif), 500 to 700
-**Wire Font:** Courier Prime (with Courier New, monospace), 400 and 700
+**Display Font:** Dela Gothic One (with Arial Black fallback)
+**Body Font:** Schibsted Grotesk (400, 600, 800, italic)
+**Data Font:** Red Hat Mono (400, 600)
 
-All five are self-hosted through @fontsource; no font loads from a third party.
+All three are self-hosted through @fontsource.
 
-**Character:** Wood-type condensed capitals shout the news while a sturdy newspaper serif carries the reading; a narrow grotesque handles every table and label, and a typewriter face marks anything that came off the wire.
+**Character:** Dela's heavy, squared letters read like blocks cut and set; the grotesque is plain workaday reading; the mono marks anything that comes off the chain.
 
 ### Hierarchy
-- **Masthead** (400, `clamp(25px, 6.55vw, 94px)`, 1.1): the paper's name, centered, never wrapping, in red. Also the running-head name (20px) and the crew-card issuer line (16px).
-- **Display** (400, `clamp(62px, 10.6vw, 152px)`, 0.88, uppercase): the front-page banner. Above 1080px it runs as a single line fitted to the full measure (up to 230px).
-- **Headline** (400, `clamp(52px, 7.2vw, 110px)`, 0.9, uppercase, balanced): each inside page's head. The same face sets the WANTED poster, the pull-quote slogan, the back-page close, drop caps and big numerals.
-- **Title** (400, 30 to 34px, 1, uppercase): rail heads, column subheads, ad heads.
-- **Deck** (PT Serif italic, `clamp(18px, 1.5vw, 21px)`, 1.5, max 58ch): the standfirst under each page head; also captions and the submast line.
-- **Body** (PT Serif 400, 18px, 1.55; 17px at 760px and below): the lede, column copy (set in 3, 2 or 1 newspaper columns with hyphenation), notices.
-- **Label** (Archivo Narrow 600 to 700, 12 to 15px, 0.06 to 0.12em, uppercase): datelines, nav, table headers, fact terms, button text (18px, 700).
-- **Wire** (Courier Prime 400, 12 to 16px): blotter entries, the contract address, folios, bylines, rail readouts and source lines.
+- **Display** (400, `5.3cqw` of the hero stage on desktop, `11.4cqw` on phones, 1.0, uppercase): the hero headline painted across the pyramid.
+- **Headline** (400, `clamp(32px, 8.6vw, 100px)`, 0.95, uppercase, balanced): section heads, the entrance line, the closing line.
+- **Title** (400, 20 to 24px, uppercase): law titles, the workshop head, the table caption, card names in the cartouche, big figures.
+- **Deck** (400, 17 to 20px, max 54ch): the line under each section head.
+- **Body** (400, 17px; 16px on phones): reading copy.
+- **Label** (800, 14 to 18px, 0.04em, uppercase): buttons, course names, inscription kinds.
+- **Data** (Red Hat Mono 400 to 600, 11.5 to 15px): field labels, addresses, tx links, amounts in tables, the CA.
 
 ### Named Rules
-**The Job Per Face Rule.** Each face has one job. League Gothic never sets body copy; PT Serif never sets labels; Courier Prime is for wire copy and data only, never headings or prose.
-
-**The Tabular Figures Rule.** Every live number uses tabular figures so counts and prices do not jitter as they update.
+**The Mono Is Chain Rule.** Red Hat Mono sets addresses, hashes, amounts and the small labels over data; never prose or headlines.
 
 ## Layout
 
-A centered sheet (max 1360px) with a fluid outer gutter (`gutter`) and a fluid column gap (`col-gap`). The front page sits on a 12-column grid: photo 5, story 4, rail 3, the rail separated by a vertical rule. Inside pages open with a 6px double rule drawn across the full measure, a wire-type folio line, then the head and deck. Body copy flows in true newspaper columns with column rules (3 on desktop, 2 at 1080px, 1 at 760px). The notice and crew-card pages use a two-column grid with a sticky companion (the wanted poster). The back page is a classified grid with a lead ad spanning two rows.
+A centred column (max 1320px) with a fluid gutter. Sections are tall and separated by their ground, not by rules: limestone courses (the rite, the laws), open sky (the pyramid), torchlit wall (inside). Each section opens with the ochre levelling line (a 3px cord with end ticks), a headline and a deck.
 
-Breakpoints: 1080px (front grid becomes 6 and 6 with the rail below; the banner stops fitting to one line), 900px (running-head index hidden), 760px (single column, story above photo, full-width buttons, take bar stacked, body 17px).
+The hero is a stage with the pyramid's own aspect ratio (1600 by 760 on desktop, 1000 by 1900 upright on phones) whose overlays are positioned in the stage's container-query units, so the painted headline, the doorway, the capstone tag, the ramp label and the base counts stay locked to the stone at any width. The rite is three stepped courses (narrowest on top). The leaderboard is a literal pyramid of 1, 2, 3 and 4 stones with a table below it. The laws are a stela beside a sticky curse tablet. Inside, the block search is two columns; the inscriptions are one full-width course per rite.
 
-A fixed running head (58px, closed by a double rule) drops in once the masthead scrolls off the top.
-
-### Named Rules
-**The Rules Do The Boxing Rule.** Structure comes from printed rules (hairline, 2px, 4px, and 5 to 6px double), not from cards, fills or gaps.
+Breakpoints: 1080px (lintel nav hidden, inscriptions regrid), 900px (laws and block page to one column, ramp label hidden), 760px (phone stage, buttons show short labels in the lintel, single-column courses, stacked tally).
 
 ## Elevation & Depth
 
-Paper lying on paper. Depth comes from stock tone (`paper-lift` pasted onto `paper`), from printed rules, and from one soft offset shadow tinted to the ground. A fixed halftone grain (1px ink dots on a 5px grid at 7% opacity) sits over the whole sheet and never repaints on scroll. The page turn adds its own depth: the stacked inside pages cast an upward shadow and a fold crease onto the front page as they slide over it.
-
-### Shadow Vocabulary
-- **Lift** (`box-shadow: 0 14px 30px -18px rgba(40, 36, 28, 0.55), 0 2px 5px -2px rgba(40, 36, 28, 0.35)`): the live button, the wanted poster, the crew card. Night final: same geometry in black at 0.8 and 0.6.
-- **Page edge** (`box-shadow: 0 -34px 50px -34px rgba(20, 18, 14, 0.55)`) with a crease gradient (`rgba(20, 18, 14, 0.14)` to transparent, 18px): only on the stack of pages that turns over the front page.
+Depth comes from stone tone and the noon sun. One cast shadow (`--cast`: down and to the right, warm brown) sits under courses, capstone stones, the curse tablet and the primary button; inside, `--cast-dark` sits under the found block. Night darkens the cast. The torchlight inside is a single warm radial light from the upper left over the dark masonry.
 
 ### Named Rules
-**The One Lift Rule.** There is one soft shadow. Hard offset shadows, glows and stacked elevations do not belong to newsprint.
+**The Noon Sun Rule.** Light comes from the upper left, always: the west face is lit, the east face is shaded, shadows fall down and to the right.
 
 ## Shapes
 
-Newspaper is square: every rule, box, button, field, table, ad and photo mount has square corners. The crew card is the one rounded object (`rounded.card`), a pocket press pass. Rounding is reserved for things that are round in the world, like the twisted fuse cord. Pasted-up pieces sit slightly askew: the wanted poster at 2deg (1deg on mobile), the crew card at -1deg, the stamp at -12deg. Borders do the shape work: solid for printed edges, dashed for coupons, blanks and cut-out lines, dotted for ledger rows, double rules for section breaks.
+Stone is square: every block, button, field, card, course and stone has square corners. Round only where the world is round: the sun disc, the cartouche around a name on the block card (`rounded.cartouche`, with the tie bar at its end), the stela's arched top, the connected-wallet dot. Masons' marks may sit askew: the "next" mark at -6deg, the status stamp at -7deg.
 
 ## Components
 
 ### Buttons
-Printed plates: square, ink-bordered, uppercase narrow type.
-- **Shape:** square corners, 2px ink border, 54px tall (40px small).
-- **Primary (live action):** red plate, red-paper text, 18px Archivo Narrow 700 at 0.06em, the lift shadow.
-- **Hover:** darkens to pressed red and rises 1px (0.18s, `--ease-press`).
-- **Active:** one-bit inversion: the plate goes to ink with paper text and sinks 1px.
-- **Ink variant:** ink plate with paper text that turns red on hover.
-- **Waiting:** transparent, dashed border, faded ink, no shadow.
-- **Focus:** a 3px red outline at 3px offset (system-wide).
+- **Primary:** ochre slab, linen label in 800 uppercase, 54px tall, square, the cast shadow. Hover deepens to pressed ochre and lifts 1px; active sinks 1px and drops the shadow.
+- **Ink:** soot slab outside, dust slab inside the tomb; hover turns ochre.
+- **Small:** 40px, no shadow (lintel).
+- **Waiting:** transparent, dashed border in the current colour, used before launch ("Tomb opens soon").
 
-### Coupon (contract address)
-A dashed cut-out on fresh stock: scissors icon, an ink "CA" tag, the address in wire type with an ellipsis, a copy icon. Hover turns the dashes red; active inverts to ink, as the buttons do.
+### The CA tablet
+A square outline in the current colour with a gold "CA" tag, the address in mono with an ellipsis, a copy icon. Hover turns the outline to lit ochre.
 
-### Inputs / Fields
-- **Style:** square, 2px ink border, fresh-sheet fill, 54px tall, Archivo Narrow 17px with tabular figures, joined flush to its button (no shadow on that button).
-- **Focus:** 3px red outline at zero offset.
-- **Error:** bold pressed-red text below; help text in faded ink.
+### The lintel
+A fixed soot beam (60px) with a 3px ochre line under it, the brand mask and name, the section index, the wallet button and the small buy button. It holds in daylight and in the tomb alike.
 
-### Navigation
-The running head: newsprint bar with a double-rule bottom, the masthead name in red slab type at left, a centered index of uppercase narrow labels (underline in red on hover), the live button at right. It slides down once the masthead has scrolled away and hides its index below 900px.
+### The hero pyramid
+Generated geometry of a Giza-style pyramid seen across one corner: 44 seeded courses (32 on phones) that thin toward the top and step in from the course below, lit west face and shaded east face split at the ridge, worn blocks and vertical joints, a light tread on every step, and the smooth casing (`casing`, `casing-shade`) still clinging to the upper fifth and breaking off along a ragged line, as on Khafre's pyramid. Around it: a hazy sky (`sky` to `haze`), the sun low in the west, two far pyramids in the haze, dunes, sand (`sand`) with the pyramid's shadow and a contact shadow at the base. A long, shallow mudbrick ramp (`mud`, `mud-lo`) runs in from the sand on the east; four haulers pull the sledge whose position is escrow / next threshold. The headline is painted in ochre across the courses; the lede sits on a `stone-hi` plaque; the doorway at the base holds the buy button and the CA.
 
-### The Front Page
-Dateline row in labels, red slab masthead, italic submast closed by a double rule, the red EXTRA bar in League Gothic, the fitted banner headline, then the photo, lede with a drop cap, and the rail. The rail carries the fuse, a twisted ink cord burning left to right with ash, char and a stepped red flame, followed by fact rows with big gothic numerals (snitches in red) and a wire-type source line.
+### The ramp meter
+On phones the ramp becomes a horizontal track in the doorway: dust track, lit-ochre progress, a small stone block riding at the escrow position.
 
-### Halftone Photograph
-The photo material. A canvas renders a 45-degree dot screen computed from Robin's own SVG, mounted in a fresh-sheet frame with a hairline border and an italic caption. It develops from a coarse screen to a fine one (on load above the fold, scrubbed by scroll below it) and comes to rest as fine dots with only a faint trace of line art. In night final the screen prints positive.
+### Capstone stones
+Gold stones (1px gold-deep border, cast shadow) with rank, mask or X avatar, name and bag; each opens that wallet's block. Empty places are dashed outlines marked "open".
 
-### Crew Card
-The signature lookup result: a press pass on fresh stock, 2px ink border, the one 10px radius, lift shadow, tilted -1deg. Double-ruled header (red slab issuer, label kind), grayscale mugshot in an ink frame, a gothic name, a two-column fact grid, an italic line, and a rubber stamp (4px border, gothic caps, -12deg) colored by state: ink for in, faded ink for waiting, red for out. The empty state is a dashed, untilted, shadowless blank.
+### The block card
+A `stone-hi` block pulled into the torchlight: header with the brand and "Block", the mask, the name inside a cartouche, a two-column fact grid, an italic status line, a mono footer, and the mason's stamp (soot when sealed, faint when curing or loose, ochre when cursed).
 
-### Wanted Poster
-A sticky notice beside the rules: fresh stock, 2px border, lift, 2deg tilt, gothic WANTED, a giant red count, and a reward line under a double rule.
-
-### Tables (the Vault)
-Stock-quotation styling: Archivo Narrow throughout, 4px rule top and bottom, 2px under the header, vertical hairlines between columns, dotted row rules, right-aligned tabular numbers, bold top rows, a back-stock hover.
-
-### Blotter Entry
-Police-ledger entries in two columns with a column rule: an ink hairline on top, a wire-type meta line in faded ink, wire-type copy with bold uppercase names, and the transaction link.
-
-### Classified Ads
-The back page grid: fresh-stock boxes with hairline borders (3px on the lead ad), gothic heads, serif copy, and one inverted ink NOTICE ad.
+### Masks
+Every wallet wears a royal mask built from four parts (material, crown, regalia, backdrop; 5, 5, 6, 6 options, matching the engine's validation). The brand mark is the gold mask with the nemes and false beard.
 
 ### Motion
-A press run on the `--ease-press` curve (`cubic-bezier(0.16, 1, 0.3, 1)`) for CSS and GSAP `expo.out` for entrances. Every inside page head runs the same sequence: the double rule draws from the left, the headline slams in from 1.16 scale out of a 7px blur, and the deck is printed down by a clip-path roller. Each section then adds one move of its own: take shares are counted out left to right, notice rules are pasted up by a horizontal wipe, the wanted poster is slapped on with a back-out overshoot, the crew card is printed in and stamped, vault rows come off the wire one at a time, and blotter entries are stamped in batches as they scroll into view. The signature move is the page turn: once the whole front page has been read, it pins at its bottom and scrubs to 0.94 scale and 0.82 brightness while the inside pages slide over it. Smooth scroll is Lenis. With reduced motion, every animation, the smooth scroll and the pin are skipped, the halftone renders at its finished fine screen, and the fuse is set directly.
-
-The operator room at `/memex` reuses these tokens (paper, ink, card radius, lift) but is a utility screen, not a designed surface.
+Exponential ease-out (`--ease-set`, GSAP `expo.out`). Section heads are cut in: the levelling line snaps across, the headline is chiselled in from the left by clip-path, the deck settles. Each section then has its own move: courses dragged in on sledges from alternating sides, capstone stones lowered course by course from the widest row up, the stela raised from the sand, the curse count counted out, inscriptions chiselled in batches, the doors of the seal sliding shut on scroll. The signature is the entrance: on desktop the wall pins and scales toward the doorway until its dark fills the screen; phones scrub the same walk without a pin. Lenis smooth scroll. Reduced motion skips all of it and shows the finished stone.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep red to its jobs: masthead, EXTRA, snitch counts and slogan, the one live action, the fuse flame, the out stamp, focus and selection.
-- **Do** separate content with printed rules (hairline, 2px, 4px, double) before reaching for boxes or fills.
-- **Do** give each face its one job: League Gothic for heads and big numerals, PT Serif for reading, Archivo Narrow for labels, tables and buttons, Courier Prime for wire copy and data.
-- **Do** print images as halftone from the real mascot art, at a fine screen at rest.
-- **Do** invert to ink on paper for pressed states on buttons and the coupon.
-- **Do** open every new inside page with the drawn double rule, folio, slammed headline and rolled deck, then one move native to its content.
-- **Do** define every color as a token and redefine it for night final; nothing hard-codes a light-only value.
-- **Do** collapse all motion to the finished static sheet under reduced motion.
+- **Do** keep gold to the capstone, the ten stones in it, the tribute course and the CA tag.
+- **Do** paint headlines on stone in ochre with multiply in daylight, plain at night.
+- **Do** put text that sits on the masonry on a `stone-hi` plaque when it is longer than a headline.
+- **Do** keep light coming from the upper left.
+- **Do** keep demo numbers labelled and every live number from the engine.
+- **Do** collapse all motion to the finished stone under reduced motion.
 
 ### Don't:
-- **Don't** add a second accent hue, gradients or tinted panels.
-- **Don't** round corners on anything but the crew card at 10px.
-- **Don't** use any shadow other than the lift and the page-turn edge; no hard offset shadows, glows or blur panels.
-- **Don't** set prose or headings in Courier Prime, or body copy in League Gothic.
-- **Don't** use stock photos or full-color art on the sheet; Robin's palette only reaches the page through halftone or grayscale.
-- **Don't** use pure `#000` ink or pure `#fff` paper.
+- **Don't** call the tribute a dividend or holders shareholders, and don't let the pyramid read as recruitment: nobody earns from bringing anyone in.
+- **Don't** add a second accent hue, gradients other than the torchlight, glows or neon.
+- **Don't** round blocks, buttons, fields or cards.
+- **Don't** invert any section other than at the entrance.
+- **Don't** set prose in Red Hat Mono or body copy in Dela Gothic One.
+- **Don't** use pure `#000` or `#fff`.

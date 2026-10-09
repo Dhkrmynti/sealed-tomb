@@ -4,14 +4,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DEMO, demoStatus, usePoll, type Status } from "./lib/api";
 import { prefersReducedMotion } from "./lib/motion";
-import { Masthead } from "./components/Masthead";
-import { FrontPage } from "./components/FrontPage";
-import { TheTake } from "./components/TheTake";
-import { Notice } from "./components/Notice";
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Rite } from "./components/Rite";
+import { Pyramid } from "./components/Pyramid";
+import { Laws } from "./components/Laws";
+import { Entrance } from "./components/Entrance";
 import { CrewCard } from "./components/CrewCard";
-import { TheVault } from "./components/TheVault";
-import { Blotter } from "./components/Blotter";
-import { BackPage } from "./components/BackPage";
+import { Inscriptions } from "./components/Inscriptions";
+import { Seal } from "./components/Seal";
 import { restoreWallet } from "./lib/wallet";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,6 +41,8 @@ export function App() {
       lenis.scrollTo(el as HTMLElement, { offset: -64 });
     };
     document.addEventListener("click", anchors);
+    // Fonts change line lengths, so every trigger is measured again once they land.
+    document.fonts?.ready.then(() => ScrollTrigger.refresh());
     return () => {
       document.removeEventListener("click", anchors);
       gsap.ticker.remove(raf);
@@ -53,21 +56,22 @@ export function App() {
     <>
       {DEMO ? (
         <div className="demo-strip" role="note">
-          Illustration edition: every number on this page is made up to preview the paper. Try the crew card and the mugshot booth; nothing you set is saved.
+          Illustration edition: every number on this page is made up to preview the tomb. Try your block and the mask workshop; nothing you set is saved.
         </div>
       ) : null}
-      <Masthead status={status} />
+      <Header status={status} />
       <main>
-        <FrontPage status={status} offline={!!error && !status} />
-        <div className="pages">
-          <TheTake status={status} />
-          <Notice status={status} />
+        <Hero status={status} offline={!!error && !status} />
+        <Rite status={status} />
+        <Pyramid status={status} />
+        <Laws status={status} />
+        <Entrance />
+        <div className="inside">
           <CrewCard live={live} />
-          <TheVault status={status} />
-          <Blotter status={status} />
-          <BackPage status={status} />
+          <Inscriptions status={status} />
         </div>
       </main>
+      <Seal status={status} />
     </>
   );
 }

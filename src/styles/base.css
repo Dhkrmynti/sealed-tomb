@@ -8,7 +8,9 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scrollbar-color: var(--ink) var(--paper-deep);
+  scrollbar-color: var(--ochre) var(--tomb);
+  /* blocks slide in from past the margin; on a phone that must never widen the page */
+  overflow-x: clip;
 }
 
 html.lenis,
@@ -21,57 +23,34 @@ html.lenis body {
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background-color: var(--paper);
-  color: var(--ink);
+  min-height: 100dvh;
+  background-color: var(--stone);
+  color: var(--soot);
   font-family: var(--f-body);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
-/* Headlines slam in from past the margin; on a phone that must never widen the page.
-   clip (not hidden) keeps the sticky Wanted poster working. */
-html {
-  overflow-x: clip;
-}
-
-/* The halftone screen of cheap newsprint, fixed so scrolling never repaints it. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: radial-gradient(circle at 1px 1px, var(--ink) 0.55px, transparent 0.9px);
-  background-size: 5px 5px;
-  opacity: 0.07;
-}
-#root {
-  position: relative;
-  z-index: 1;
 }
 
 ::selection {
-  background: var(--red);
-  color: var(--red-ink);
+  background: var(--ochre);
+  color: var(--ochre-ink);
 }
 
 ::-webkit-scrollbar {
   width: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--paper-deep);
-  border-left: 1px solid var(--rule-soft);
+  background: var(--tomb);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--ink);
-  border: 3px solid var(--paper-deep);
+  background: var(--ochre);
+  border: 3px solid var(--tomb);
 }
 
 :focus-visible {
-  outline: 3px solid var(--red);
+  outline: 3px solid var(--ochre);
   outline-offset: 3px;
 }
 
@@ -80,16 +59,16 @@ button,
 textarea {
   font: inherit;
   color: inherit;
-  caret-color: var(--red);
+  caret-color: var(--ochre);
 }
 
 a {
   color: inherit;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.22em;
   text-decoration-thickness: 1.5px;
 }
 a:hover {
-  text-decoration-color: var(--red);
+  text-decoration-color: var(--ochre);
 }
 
 h1,

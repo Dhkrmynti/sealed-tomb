@@ -1,6 +1,6 @@
-# Robin Heist · $RBANK
+# The Sealed Tomb · $TOMB
 
-Memecoin site + engine for **$RBANK · Robin Heist** (Robinhood Chain 4663, launched on Pons; rebranded from Pepads/$PADS on 8 Oct 2026, see `CONCEPT.md`). Creator fees run a three-step loop: ETH straight to the **10 biggest wallets that never sold**, the keeper's cut to the treasury, then a buyback burn. Concept: `CONCEPT.md`. Product truth: `PRODUCT.md`.
+Memecoin site + engine for **$TOMB · The Sealed Tomb** (Robinhood Chain 4663, launched on Pons; rebranded from Robin Heist/$RBANK before its launch on 9 Oct 2026, and from Pepads/$PADS before that, see `CONCEPT.md`). Design system: `DESIGN.md`. Creator fees run a three-step loop: ETH straight to the **10 biggest wallets that never sold**, the keeper's cut to the treasury, then a buyback burn. Concept: `CONCEPT.md`. Product truth: `PRODUCT.md`.
 
 ## Run locally
 
