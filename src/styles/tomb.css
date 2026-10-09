@@ -385,19 +385,57 @@ body:has(.demo-strip) .seal {
 .mud-courses {
   fill: none;
   stroke: var(--mud-lo);
-  stroke-width: 1.4;
-  stroke-dasharray: 16 3;
-  vector-effect: non-scaling-stroke;
+  stroke-width: 0.8;
+  stroke-opacity: 0.55;
+}
+.ramp-top {
+  fill: none;
+  stroke: var(--sand-far);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.ramp-sleepers {
+  fill: none;
+  stroke: var(--mud-lo);
+  stroke-width: 1.6;
+  stroke-dasharray: 2.4 7;
 }
 .sledge-runner {
   fill: var(--mud-lo);
   stroke: var(--soot);
-  stroke-width: 0.8;
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+}
+.sledge-beam {
+  fill: var(--mud);
+  stroke: var(--soot);
+  stroke-width: 0.4;
 }
 .sledge-block {
-  fill: var(--casing);
-  stroke: var(--ochre);
-  stroke-width: 2;
+  fill: var(--stone);
+  stroke: var(--stone-shade);
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+}
+.sledge-block__top {
+  fill: var(--stone-hi);
+  stroke: var(--stone-shade);
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+}
+.sledge-block__end {
+  fill: var(--stone-shade);
+}
+.sledge-block__tool {
+  fill: none;
+  stroke: var(--stone-lo);
+  stroke-width: 0.6;
+  stroke-linecap: round;
+}
+.sledge-lash {
+  fill: none;
+  stroke: var(--mud-lo);
+  stroke-width: 0.9;
 }
 .hauler__skin {
   fill: var(--skin);

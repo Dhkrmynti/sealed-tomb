@@ -198,6 +198,11 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
     const r = geo.ramp;
     return r ? (Math.atan2(r.y0 - r.y1, r.x0 - r.x1) * 180) / Math.PI : 0;
   }, [geo]);
+  // The side of the ramp: its top edge, the sand from its foot back to the pyramid's
+  // corner, and the face of the pyramid back up to where the ramp meets it.
+  const rampSide = geo.ramp
+    ? `M${geo.ramp.x1} ${geo.ramp.y1} L${geo.ramp.x0} ${geo.ramp.y0} L${cx + geo.half} ${geo.baseY} L${geo.ramp.x1 + 8} ${geo.ramp.y1} Z`
+    : "";
   // The crew on the ramp, in the sledge's own coordinates: a water-carrier wetting the
   // sand in front of the runners, then five haulers on one rope, feet on the slope.
   const crew = useMemo(() => {
@@ -212,7 +217,9 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
       const stride = i % 2 ? 1 : -1; // alternate the stride so the line reads as walking
       return { at, ...figure(k, stride) };
     });
-    const tie = { x: ux * 15, y: uy * 15 - 9 };
+    // The rope is made fast to the curled nose of the runners, at (-19.5, -6) in the
+    // sledge's rotated frame, which points down the ramp.
+    const tie = { x: 19.5 * ux - 6 * uy, y: 19.5 * uy + 6 * ux };
     const rope = [tie, ...haulers.map((h) => ({ x: h.at.x + h.rope.x, y: h.at.y + h.rope.y }))];
     const ahead = haulers[haulers.length - 1];
     rope.push({ x: ahead.at.x + ahead.hand.x, y: ahead.at.y + ahead.hand.y });
@@ -348,13 +355,19 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
 
           {geo.ramp ? (
             <g className="hero__ramp">
+              {/* a mudbrick embankment heaped against the east face, its side laid in
+                  courses, its top packed hard and crossed with timber sleepers */}
+              <clipPath id="ramp-side">
+                <path d={rampSide} />
+              </clipPath>
+              <path className="mud" d={rampSide} />
               <path
-                className="mud"
-                d={`M${geo.ramp.x0} ${geo.ramp.y0} L${geo.ramp.x1} ${geo.ramp.y1} L${geo.ramp.x1 + 30} ${geo.ramp.y1} L${geo.ramp.x0 + 30} ${geo.ramp.y0} Z`}
+                className="mud-courses"
+                clipPath="url(#ramp-side)"
+                d={Array.from({ length: Math.ceil((geo.ramp.y0 - geo.ramp.y1) / 8) }, (_, i) => `M${geo.ramp!.x1} ${geo.ramp!.y1 + 6 + i * 8}H${geo.ramp!.x0}`).join("")}
               />
-              {[8, 16, 24].map((o, i) => (
-                <path key={o} className="mud-courses" strokeDashoffset={i * 9} d={`M${geo.ramp!.x0 + o} ${geo.ramp!.y0} L${geo.ramp!.x1 + o} ${geo.ramp!.y1}`} />
-              ))}
+              <path className="ramp-top" d={`M${geo.ramp.x1} ${geo.ramp.y1} L${geo.ramp.x0} ${geo.ramp.y0}`} />
+              <path className="ramp-sleepers" d={`M${geo.ramp.x1} ${geo.ramp.y1 + 1} L${geo.ramp.x0} ${geo.ramp.y0 + 1}`} />
               <g ref={sledge}>
                 {crew ? (
                   <>
@@ -378,9 +391,16 @@ export function Hero({ status, offline }: { status: Status | null; offline: bool
                     </g>
                   </>
                 ) : null}
+                {/* a dressed limestone block on a wooden sledge: runners curled up at the
+                    nose, crossbeams under the stone, the block lashed down with rope */}
                 <g transform={`rotate(${rampAngle})`}>
-                  <path className="sledge-runner" d="M-17 -4 H16 L16 0 H-14 Q-18 -1 -17 -4 Z" />
-                  <rect className="sledge-block" x="-13" y="-19" width="26" height="15" />
+                  <path className="sledge-runner" d="M15 0 H-13 Q-19 0 -20.5 -6.5 L-18 -7 Q-16.6 -3 -12.5 -3 H15 Z" />
+                  <path className="sledge-block" d="M-12 -3 L-12.6 -17 L11.6 -17.6 L12.4 -3 Z" />
+                  <path className="sledge-block__top" d="M-12.6 -17 L-10.4 -19.2 L13.6 -19.6 L11.6 -17.6 Z" />
+                  <path className="sledge-block__end" d="M12.4 -3 L11.6 -17.6 L13.6 -19.6 L14.4 -5 Z" />
+                  <path className="sledge-block__tool" d="M-8 -7.4 l3 -0.4 M1 -13 l4 -0.3 M-3 -10.2 l2.4 -0.2" />
+                  <path className="sledge-lash" d="M-7.6 -1.6 L-8.4 -18.8 M6.4 -1.6 L6.8 -19.3" />
+                  <path className="sledge-beam" d="M-11 -0.6 h2.6 v-3.4 h-2.6 Z M7.6 -0.6 h2.6 v-3.4 h-2.6 Z" />
                 </g>
               </g>
             </g>
