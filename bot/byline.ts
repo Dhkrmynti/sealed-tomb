@@ -24,7 +24,7 @@ export interface XProfile {
 interface Byline {
   name?: string;
   at?: number;
-  /** While set, the leaderboard shows the X account instead of the nickname and mugshot. */
+  /** While set, the leaderboard shows the X account instead of the throne name and mask. */
   x?: XProfile;
   /** Mugshot parts [fur, hat, accessory, background]; absent means the generated one. */
   pp?: number[];
@@ -107,7 +107,7 @@ export function bylineMessage(addr: string, name: string, pp: string, nonce: str
     "The Sealed Tomb: carve my throne name",
     `Wallet: ${ethers.getAddress(addr)}`,
     `Nickname: ${name}`,
-    `Mugshot: ${pp}`,
+    `Mask: ${pp}`,
     `Nonce: ${nonce}`,
     "This signature is free and moves no funds.",
   ].join("\n");
@@ -163,7 +163,7 @@ export function claimByline(input: { addr?: unknown; name?: unknown; pp?: unknow
   const addr = input.addr.toLowerCase();
   const { name, error } = cleanName(input.name);
   if (error || !name) return { error };
-  if (!validMugshot(input.pp)) return { error: "Pick a mugshot." };
+  if (!validMugshot(input.pp)) return { error: "Pick a mask." };
   const pp = input.pp;
   const bad = spendNonce(addr, input.nonce, input.signature, (n) => bylineMessage(addr, name, pp.join("-"), n));
   if (bad) return { error: bad };
@@ -172,7 +172,7 @@ export function claimByline(input: { addr?: unknown; name?: unknown; pp?: unknow
   const prev = book[addr];
   if (prev?.x) return { error: "This wallet shows its X account. Unlink X first to use a nickname." };
   const changed = !prev || prev.name !== name || (prev.pp ?? []).join("-") !== pp.join("-");
-  if (prev?.at && changed && now - prev.at < COOLDOWN) return { error: "You can change your byline once a day." };
+  if (prev?.at && changed && now - prev.at < COOLDOWN) return { error: "You can change your throne name once a day." };
   const taken = Object.entries(book).find(([a, b]) => a !== addr && b.name?.toLowerCase() === name.toLowerCase());
   if (taken) return { error: "Another wallet already uses that nickname." };
   if (changed) {

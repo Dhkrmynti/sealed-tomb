@@ -1,5 +1,5 @@
 /**
- * Persistent config + state for the $PADS engine.
+ * Persistent config + state for the $TOMB engine.
  * bot-config.json holds operator settings (incl. the private key, never served by the API).
  * bot-state.json holds the indexer, holder book, rounds and totals.
  */
@@ -33,9 +33,9 @@ export interface Config {
   tokenAddress: string;
   curveAddress: string;
   treasuryAddress: string;
-  /** Extra addresses that count as "selling" when $PADS is sent to them (DEX pool / PoolManager). */
+  /** Extra addresses that count as "selling" when $TOMB is sent to them (DEX pool / PoolManager). */
   sellSinks: string[];
-  /** Any transfer of $PADS into a contract counts as a sell (except excluded addresses). */
+  /** Any transfer of $TOMB into a contract counts as a sell (except excluded addresses). */
   contractsAreSells: boolean;
   /** Escrow size (ETH) that triggers each step of the cycle: feeding → keeper → sink → feeding … */
   feedingETH: string;
@@ -45,7 +45,7 @@ export interface Config {
   feedingTopN: number;
   /** Minimum balance (whole tokens) to be fed. */
   minBalance: string;
-  /** A wallet's first $PADS must be at least this old to be fed (stops last-second snipes). */
+  /** A wallet's first $TOMB must be at least this old to be fed (stops last-second snipes). */
   minHoldHours: number;
   pollIntervalSeconds: number;
   port: number;
@@ -101,7 +101,7 @@ export interface Holder {
   received: string;
   /** Tx of the latest incoming transfer (spots routers that pass tokens straight through). */
   lastInTx?: string;
-  /** A contract that only relays $PADS within one transaction (router, aggregator). Never a sitter. */
+  /** A contract that only relays $TOMB within one transaction (router, aggregator). Never a sitter. */
   relay?: boolean;
 }
 
@@ -135,7 +135,7 @@ export interface Round {
   payouts: Payout[];
   treasuryTx: string;
   buyTx: string;
-  /** Engine's $PADS balance just before the buyback; only what the buy added gets burned. */
+  /** Engine's $TOMB balance just before the buyback; only what the buy added gets burned. */
   heldBefore?: string;
   tokensBought: string;
   burnTx: string;
