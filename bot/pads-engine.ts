@@ -15,7 +15,7 @@
 import http from "http";
 import { ethers } from "ethers";
 import { config, saveConfig, state, saveStateNow, saveStateSoon, resetStateForToken, logs, log, CYCLE, type Holder, type Payout, type Round, type RoundKind } from "./store";
-import { buildUniswapV4Buy, UNISWAP_V4_UNIVERSAL_ROUTER } from "./uniswap-v4";
+import { buildUniswapV4Buy, findGraduationPool, UNISWAP_V4_POOL_MANAGER, UNISWAP_V4_UNIVERSAL_ROUTER, type PoolKey } from "./uniswap-v4";
 import { bylineOf, bylineMessage, claimByline, clearX, issueNonce, mugshotOf, rateLimited, removeByline, setX, spendNonce, xMessage, xOf } from "./byline";
 import { backTo, finishLink, parkDemoResult, startLink, takeDemoResult, xDemoEnabled, xEnabled } from "./xlink";
 
@@ -42,6 +42,8 @@ let wallet: ethers.Wallet | null = null;
 let status: "standby" | "indexing" | "claiming" | "feeding" | "keeper" | "sinking" | "idle" | "error" = "standby";
 let escrowWei = 0n;
 let decimals = 18;
+/** The graduation pool, found once after the curve graduates. */
+let v4Pool: PoolKey | null = null;
 
 const lc = (a: string) => a.toLowerCase();
 const isAddr = (a?: string) => !!a && ethers.isAddress(a.trim());
@@ -67,7 +69,7 @@ initWallet();
 /* ───────────────────────── eligibility ───────────────────────── */
 
 function excluded(): Set<string> {
-  const s = new Set<string>([ZERO, DEAD, lc(PONS_FEE_ESCROW), lc(UNISWAP_V4_UNIVERSAL_ROUTER)]);
+  const s = new Set<string>([ZERO, DEAD, lc(PONS_FEE_ESCROW), lc(UNISWAP_V4_UNIVERSAL_ROUTER), lc(UNISWAP_V4_POOL_MANAGER)]);
   if (isAddr(config.curveAddress)) s.add(lc(config.curveAddress));
   if (isAddr(config.treasuryAddress)) s.add(lc(config.treasuryAddress));
   if (isAddr(config.tokenAddress)) s.add(lc(config.tokenAddress));
@@ -159,6 +161,7 @@ async function indexTransfers() {
   const ex = excluded();
   const sinks = new Set(config.sellSinks.map(lc));
   if (isAddr(config.curveAddress)) sinks.add(lc(config.curveAddress));
+  sinks.add(lc(UNISWAP_V4_POOL_MANAGER));
 
   while (state.lastIndexedBlock < latest) {
     const from = state.lastIndexedBlock + 1;
@@ -369,12 +372,17 @@ async function sink(r: Round) {
     }
     const curve = new ethers.Contract(config.curveAddress, CURVE_ABI, wallet!);
     const graduated: boolean = await curve.graduated().catch(() => false);
+    if (graduated && !v4Pool) {
+      v4Pool = await findGraduationPool(provider!, config.tokenAddress, config.curveAddress, config.startBlock);
+      if (!v4Pool) throw new Error(`Round #${r.n}: the curve graduated but its Uniswap v4 pool isn't found yet; retrying.`);
+      log("info", `Uniswap v4 pool found: fee ${v4Pool.fee}, tick spacing ${v4Pool.tickSpacing}, hook ${v4Pool.hooks}`);
+    }
     const ok = await once(
       () => r.buyTx,
       (h) => (r.buyTx = h),
       () =>
         graduated
-          ? wallet!.sendTransaction({ to: UNISWAP_V4_UNIVERSAL_ROUTER, value: pay, data: buildUniswapV4Buy(config.tokenAddress, pay), gasLimit: 400000n })
+          ? wallet!.sendTransaction({ to: UNISWAP_V4_UNIVERSAL_ROUTER, value: pay, data: buildUniswapV4Buy(config.tokenAddress, pay, v4Pool!), gasLimit: 400000n })
           : curve.buy(pay, 0n, wallet!.address, { value: pay }),
     );
     if (!ok) throw new Error(`Round #${r.n}: buyback reverted`);
@@ -670,6 +678,7 @@ const server = http.createServer((req, res) => {
             config.curveAddress = "";
             config.startBlock = 0;
             resetStateForToken();
+            v4Pool = null;
             log("info", `[CONFIG] Token set: ${config.tokenAddress}`);
           }
         }
